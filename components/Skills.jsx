@@ -9,7 +9,7 @@ import Github from '../public/assets/skills/github1.png';
 import Adonis from '../public/assets/skills/adonis.png';
 import NextJS from '../public/assets/skills/nextjs.png'
 import PHP from '../public/assets/skills/php.png'
-import MYSQL from '../public/assets/skills/Mysql.png'
+import MYSQL from '../public/assets/skills/mysql.png'
 import Node from '../public/assets/skills/node.png'
 import Redis from '../public/assets/skills/redis.png'
 
