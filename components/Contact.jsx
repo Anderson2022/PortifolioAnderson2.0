@@ -37,8 +37,9 @@ const Contact = () => {
               <div>
                 <p className='uppercase pt-8'>Connect With Me</p>
                 <div className='flex items-center justify-between py-4'>
+                  <Link href='https://www.linkedin.com/in/anderson-silva-346255160/'>
                   <a
-                    href='https://www.linkedin.com/in/anderson-silva-346255160/'
+                  
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -46,9 +47,11 @@ const Contact = () => {
                       <FaLinkedinIn />
                     </div>
 
-                  </a>
+                    </a>
+                  </Link>
+                  <Link href='https://www.facebook.com/Salgadoed'>
                   <a
-                    href='https://www.facebook.com/Salgadoed'
+                    
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -56,7 +59,7 @@ const Contact = () => {
                       <FaFacebook />
                     </div>
                   </a>
-
+                  </Link>
 
                   {/* <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
                     <AiOutlineMail />
