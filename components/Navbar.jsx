@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import { useRouter } from 'next/router';
+
 
 
 const Navbar = () => {
@@ -59,13 +59,6 @@ const Navbar = () => {
           <a>
             <p className="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
       
-            {/* <Image
-              src={NavLogo}
-              alt='/'
-              width='125'
-              height='50'
-              className='cursor-pointer'
-            /> */}
           </a>
         </Link>
         <div>
@@ -125,12 +118,7 @@ const Navbar = () => {
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
                 <a>
-                  <Image
-                    src={NavLogo}
-                    width='87'
-                    height='35'
-                    alt='/'
-                  />
+                Andeson
                 </a>
               </Link>
               <div
