@@ -25,24 +25,17 @@ const property = () => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
           <p>Project</p>
-          <h2>Overview</h2>
+          <h2>Visão geral</h2>
           <p>
-            This app was built using React JS and is hosted on Firebase. Users
-            are able to search properties based on an Address, City, or ZIP code
-            to retrieve a list of active properties currently for sale. You will
-            be able to view property information as well as the specific
-            location of the property integrated with the Google Maps API. User
-            authentication is available so you can signup and signin to your
-            account with an email address in order to save your favorite
-            properties. This is made possible with Zillow API.
+            Este aplicativo foi construído usando React JS e está hospedado no Firebase. Os usuários podem pesquisar propriedades com base em um endereço, cidade ou código postal para obter uma lista de propriedades ativas atualmente à venda. Você poderá visualizar informações da propriedade, bem como a localização específica da propriedade integrada com a API do Google Maps. A autenticação do usuário está disponível, permitindo que você se cadastre e faça login em sua conta com um endereço de e-mail para salvar suas propriedades favoritas. Isso é possível graças à API do Zillow.
           </p>
-          <a
+          {/* <a
             href='https://github.com/fireclint/property-finder'
             target='_blank'
             rel='noreferrer'
           >
             <button className='px-8 py-2 mt-4 mr-8'>Code</button>
-          </a>
+          </a> */}
           <a
             href='https://property-finder-development.web.app/'
             target='_blank'
@@ -76,9 +69,9 @@ const property = () => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
+        {/* <Link href='/#projects'>
           <p className='underline cursor-pointer'>Back</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

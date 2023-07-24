@@ -25,25 +25,17 @@ const crypto = () => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
           <p>Project</p>
-          <h2>Overview</h2>
+          <h2>Visão geral</h2>
           <p>
-            I built this app to demonstrate knowledge working in React JS and
-            accessing API endpoints. This app was built using React JS and is
-            hosted on Firebase. This application supports user authentication
-            using firebase. Users are able to create a new account using their
-            email address and can then sign in to save coins to a user specific
-            list. This is made possble by creating a firestore cloud storage
-            database at the time of user registration. Another feature of this
-            application is dynamic routing through the &quot;React Router DOM&quot;
-            package. This application was built using the Coin Gecko API.
+            Eu construí este aplicativo para demonstrar conhecimento em trabalhar com React JS e acessar pontos de extremidade (endpoints) de API. O app foi construído usando React JS e está hospedado no Firebase. Esta aplicação suporta autenticação de usuários usando o Firebase. Os usuários podem criar uma nova conta usando seu endereço de e-mail e, em seguida, fazer login para salvar moedas em uma lista específica do usuário. Isso é possível através da criação de um banco de dados de armazenamento em nuvem Firestore no momento do registro do usuário. Outra funcionalidade deste aplicativo é o roteamento dinâmico por meio do pacote "React Router DOM". A aplicação foi desenvolvida utilizando a API Coin Gecko.
           </p>
-          <a
+          {/* <a
             href='https://github.com/fireclint/crypto-react-firebase'
             target='_blank'
             rel='noreferrer'
           >
             <button className='px-8 py-2 mt-4 mr-8'>Code</button>
-          </a>
+          </a> */}
           <a
             href='https://cryptobase-yt.web.app/'
             target='_blank'
@@ -78,9 +70,9 @@ const crypto = () => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
+        {/* <Link href='/#projects'>
           <p className='underline cursor-pointer'>Back</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

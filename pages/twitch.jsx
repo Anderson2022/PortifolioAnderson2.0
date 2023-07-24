@@ -25,23 +25,17 @@ const twitch = () => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
           <p>Project</p>
-          <h2>Overview</h2>
+          <h2>Visão geral</h2>
           <p>
-            This appplication was built using NEXT.JS and is styled with
-            Tailwind CSS. The application is hosted statically using Vercel.
-            This is a mobile responsive recreation of Twitch.tv and features
-            Next/Auth.js for authentication. Users may choose to be
-            authenticated with either a Github account or a Google account. A
-            few features to note with this project are lazy loading images using
-            the Image component, built in routing, and Next/Auth Context.
+            Esta aplicação foi construída usando NEXT.JS e estilizada com Tailwind CSS. A aplicação está hospedada estaticamente usando o Vercel. Trata-se de uma recriação responsiva para dispositivos móveis do Twitch.tv e conta com a funcionalidade de autenticação Next/Auth.js. Os usuários têm a opção de se autenticarem com uma conta do Github ou do Google. Algumas características importantes deste projeto incluem o carregamento preguiçoso de imagens usando o componente Image, roteamento integrado e o contexto do Next/Auth.
           </p>
-          <a
+          {/* <a
             href='https://twitch-nextjs-tailwind.vercel.app/'
             target='_blank'
             rel='noreferrer'
           >
             <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
-          </a>
+          </a> */}
           <a
             href='https://github.com/fireclint/twitch-nextjs-tailwind'
             target='_blank'
@@ -76,9 +70,9 @@ const twitch = () => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
+        {/* <Link href='pages/Front/pages/#projects'>
           <p className='underline cursor-pointer'>Back</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

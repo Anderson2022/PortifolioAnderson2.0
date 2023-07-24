@@ -11,28 +11,22 @@ const About = () => {
           <p className='uppercase text-xl tracking-widest text-[#5651e5]'>
             About
           </p>
-          <h2 className='py-4'>Who I Am</h2>
+          <h2 className='py-4'>Quem eu sou</h2>
           <p className='py-2 text-gray-600'>
-            I specialize in building mobile responsive front-end UI applications
-            that connect with API’s and other backend technologies. I’m
-            passionate about learning new technologies and understand there is
-            more than one way to accomplish a task. Though I am most proficient
-            in building front-end applications using HTML, CSS, Javascript, and
-            React, I am a quick learner and can pick up new tech stacks as
-            needed. I believe that being a great developer is not using one
-            specific language, but choosing the best tool for the job.
+            Eu estou me especializando na criação de aplicativos de interface do usuário de front-end responsivos para dispositivos móveis que se conectam com APIs e outras tecnologias de back-end. Sou apaixonado por aprender novas tecnologias e entendo que há mais de uma maneira de realizar uma tarefa.Como desenvolvedor júnior focado no backend, tenho me dedicado principalmente à criação de APIs utilizando tecnologias como Node.js, Adonis.js,  e Prisma.js. Meu conhecimento é mais proficiente nesse âmbito, e estou sempre buscando aprimorar minhas habilidades nessa área.
+
+            Além disso, tenho uma habilidade essencial: a capacidade de aprender rapidamente. Isso me permite adquirir novas pilhas de tecnologia conforme necessário para enfrentar desafios futuros.
+
           </p>
           <p className='py-2 text-gray-600'>
-            I started web developement in 2013 managing multiple e-commerce
-            websites on CMS platforms such as WordPress, BigCommerce, and
-            Shopify. I have experience working directly with clients and taking
-            mock wireframes all the way to deployed applications. In my spare
-            time I run Code Commerce, a Youtube channel where I teach web
-            developement and various front-end technologies.
+            Acredito firmemente que ser um grande desenvolvedor não se resume a dominar apenas uma linguagem específica, mas sim em saber escolher a melhor ferramenta para cada trabalho. Minha mentalidade é sempre estar aberto a aprender e aplicar soluções adequadas para entregar produtos de alta qualidade
+
+            Tenho experiência em trabalhar diretamente com clientes e levar wireframes simulados até os aplicativos implantados. No meu tempo livre coloco em pratica o hobi em motion design.job.
+
           </p>
           <Link href='/#projects'>
             <p className='py-2 text-gray-600 underline cursor-pointer'>
-              Check out some of my latest projects.
+              Confira alguns dos meus últimos projetos.
             </p>
           </Link>
         </div>

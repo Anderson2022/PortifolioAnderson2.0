@@ -25,23 +25,18 @@ const netflix = () => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
           <p>Project</p>
-          <h2>Overview</h2>
+          <h2>Visão geral</h2>
           <p>
-            I built this application in React JS and is hosted on GitHub pages.
-            This app features user authentication with firebase as well as the
-            firestore cloud storage database. This application is pulling movie
-            data from an the IMDB movie API and displaying different categories.
-            It features horizontal sliding and a featured selection. The
-            useContext hook is also being implemented for app-wide state
-            management.
+            Eu construí esta aplicação em React JS e a hospedei nas páginas do GitHub.
+            Este app possui autenticação de usuários com o Firebase, bem como o banco de dados de armazenamento em nuvem do Firestore. A aplicação está obtendo dados de filmes a partir da API de filmes IMDB e exibindo diferentes categorias. Ela apresenta um carrossel horizontal e uma seleção em destaque. O hook useContext também está sendo utilizado para o gerenciamento de estado em toda a aplicação.
           </p>
-          <a
+          {/* <a
             href='https://github.com/fireclint/netflix-react-tailwind'
             target='_blank'
             rel='noreferrer'
           >
             <button className='px-8 py-2 mt-4 mr-8'>Code</button>
-          </a>
+          </a> */}
           <a
             href='https://fireclint.github.io/netflix-react-tailwind/'
             target='_blank'
@@ -72,9 +67,9 @@ const netflix = () => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
+        {/* <Link href='/#projects'>
           <p className='underline cursor-pointer'>Back</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

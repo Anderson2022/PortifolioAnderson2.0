@@ -70,22 +70,28 @@ const Navbar = () => {
         </Link>
         <div>
           <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='button-89 hover:border-b'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='button-89'>
               <Link href='/#about'>About</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='button-89 button-89'>
               <Link href='/#skills'>Skills</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='button-89 hover:border-b'>
+              <Link href='/#hobby'>Hobby</Link>
+            </li>
+            <li className='button-89 hover:border-b'>
               <Link href='/#projects'>Projects</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/resume'>Resume</Link>
+            <li className='button-89 hover:border-b'>
+              <Link href='/404'>Resume</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
+            <li className='button-89 hover:border-b'>
+              <Link href='/Front/resume'>Front-end</Link>
+            </li>
+            <li className='button-89 hover:border-b'>
               <Link href='/#contact'>Contact</Link>
             </li>
           </ul>
@@ -157,14 +163,24 @@ const Navbar = () => {
                   Skills
                 </li>
               </Link>
+              <Link href='/#hobby'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                  Hobby
+                </li>
+              </Link>
               <Link href='/#projects'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Projects
                 </li>
               </Link>
-              <Link href='/resume'>
+              <Link href='/404'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Resume
+                </li>
+              </Link>
+              <Link href='/Front/resume'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                  Front-end
                 </li>
               </Link>
               <Link href='/#contact'>
@@ -205,6 +221,14 @@ const Navbar = () => {
                   </div>
                 </Link>
                 <Link href='/resume'>
+                  <div
+                    onClick={() => setNav(!nav)}
+                    className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
+                  >
+                    <BsFillPersonLinesFill />
+                  </div>
+                </Link>
+                <Link href='/Front/resume'>
                   <div
                     onClick={() => setNav(!nav)}
                     className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
