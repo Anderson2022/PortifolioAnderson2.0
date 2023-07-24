@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-
+import Link from 'next/link';
 const Resume404 = () => {
   return (
     <>
@@ -62,10 +62,11 @@ const Resume404 = () => {
 
                 <div className="contant_box_404">
                   <h3 className="h2">
-                    Look like you're lost
+                    Look like you are lost
                   </h3>
                   <p>the page you are looking for is not available!</p>
-                  <a href="/" className="link_404">Go to Home</a>
+                  <a className="link_404">Go to Home
+                    <Link href='/'>Resume</Link></a>
                 </div>
               </div>
             </div>

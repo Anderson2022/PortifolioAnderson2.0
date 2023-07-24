@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <Link href='/'>
           <a>
-           <p class="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
+            <p className="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
       
             {/* <Image
               src={NavLogo}
