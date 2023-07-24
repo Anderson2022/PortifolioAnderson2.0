@@ -21,7 +21,7 @@ const About = () => {
           <p className='py-2 text-gray-600'>
             Acredito firmemente que ser um grande desenvolvedor não se resume a dominar apenas uma linguagem específica, mas sim em saber escolher a melhor ferramenta para cada trabalho. Minha mentalidade é sempre estar aberto a aprender e aplicar soluções adequadas para entregar produtos de alta qualidade
 
-            Tenho experiência em trabalhar diretamente com clientes e levar wireframes simulados até os aplicativos implantados. No meu tempo livre coloco em pratica o hobi em motion design.job.
+            Tenho experiência em trabalhar diretamente com clientes e levar wireframes simulados até os aplicativos implantados. No meu tempo livre coloco em pratica o hobby em motion design.job.
 
           </p>
           <Link href='/#projects'>
