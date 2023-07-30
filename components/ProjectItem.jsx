@@ -1,3 +1,4 @@
+import i18next from 'i18next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,7 +11,7 @@ const ProjectItem = ({title, backgroundImg, tech, projectUrl}) => {
         <h3 className='text-2xl text-white tracking-wider text-center'>{title}</h3>
         <p className='pb-4 pt-2 text-white text-center'>{tech}</p>
         <Link href={projectUrl ?? '/'}>
-            <p className='text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer'>More Info</p>
+          <p className='text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer'> {i18next.t('More')}</p>
         </Link>
     </div>
  </div>
