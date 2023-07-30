@@ -5,60 +5,61 @@ import React, { useState } from 'react';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-// import ContactImg from '../public/assets/contact.jpg';
+import ContactImg from '../public/assets/contact.jpg';
+import { i18n } from '../translate/i18n'
+import Image from 'next/image'
 
 const Contact = () => {
   return (
     <div id='contact' className='w-full lg:h-screen'>
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
-          Contact
+          {i18n.t('titleContact')}
         </p>
-        <h2 className='py-4'>Get In Touch</h2>
+        <h2 className='py-4'> {i18n.t('textH2')}</h2>
         <div className='grid lg:grid-cols-5 gap-8'>
           {/* left */}
           <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
             <div className='lg:p-4 h-full '>
               <div>
-                {/* <Image
+                <Image
                   className='rounded-xl hover:scale-105 ease-in duration-300'
                   src={ContactImg}
                   alt='/'
-                /> */}
+                />
               </div>
               <div>
                 <h2 className='py-2'>Anderson Da Silva</h2>
-                <p>Back-End Developer</p>
+                <p> {i18n.t('textH3')}</p>
                 {/* <p className='py-4'>
                   I am available for freelance or full-time positions. Contact
                   me and let&apos;s talk.
                 </p> */}
               </div>
               <div>
-                <p className='uppercase pt-8'>Connect With Me</p>
+                <p className='uppercase pt-8'> <p> {i18n.t('textContact')}</p></p>
                 <div className='flex items-center justify-between py-4'>
                   <Link href='https://www.linkedin.com/in/anderson-silva-346255160/'>
-                  <a
-                  
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
-                      <FaLinkedinIn />
-                    </div>
+                    <a
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
+                        <FaLinkedinIn />
+                      </div>
 
                     </a>
                   </Link>
                   <Link href='https://www.facebook.com/Salgadoed'>
-                  <a
-                    
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
-                      <FaFacebook />
-                    </div>
-                  </a>
+                    <a
+
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
+                        <FaFacebook />
+                      </div>
+                    </a>
                   </Link>
 
                   {/* <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
@@ -86,7 +87,7 @@ const Contact = () => {
               >
                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>Name</label>
+                    <label className='uppercase text-sm py-2'> {i18n.t('textName')}</label>
                     <input
                       className='border-2 rounded-lg p-3 flex border-gray-300'
                       type='text'
@@ -95,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>
-                      Phone Number
+                      {i18n.t('textPhoneNumber')}
                     </label>
                     <input
                       className='border-2 rounded-lg p-3 flex border-gray-300'
@@ -105,7 +106,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Email</label>
+                  <label className='uppercase text-sm py-2'> {i18n.t('textEmail')}</label>
                   <input
                     className='border-2 rounded-lg p-3 flex border-gray-300'
                     type='email'
@@ -113,7 +114,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Subject</label>
+                  <label className='uppercase text-sm py-2'> {i18n.t('textSubject')}</label>
                   <input
                     className='border-2 rounded-lg p-3 flex border-gray-300'
                     type='text'
@@ -121,7 +122,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Message</label>
+                  <label className='uppercase text-sm py-2'>{i18n.t('textMessage')}</label>
                   <textarea
                     className='border-2 rounded-lg p-3 border-gray-300'
                     rows='10'
@@ -129,7 +130,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <button className='w-full p-4 text-gray-100 mt-4'>
-                  Send Message
+                  {i18n.t('textSendMessage')}
                 </button>
               </form>
             </div>

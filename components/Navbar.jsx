@@ -5,13 +5,39 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 
-
+const I18N_STORAGE_KEY = 'i18nextLng';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#414242');
   const [linkColor, setLinkColor] = useState('#fafffe');
+  const [language, setLanguage] = useState('');
+
+
+  useEffect(() => {
+    const storedLanguage = getStoredLanguage();
+    setLanguage(storedLanguage || 'default_language_value');
+  }, []);
+
+  const getStoredLanguage = () => {
+    // Check if localStorage is available (browser context)
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(I18N_STORAGE_KEY);
+    }
+    return null;
+  };
+
+  const handleSelectChange = event => {
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
+
+    // Check if localStorage is available (browser context)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(I18N_STORAGE_KEY, selectedLanguage);
+      window.location = window.location;
+    }
+  }
   // const [position, setPosition] = useState('fixed')
   // const router = useRouter();
 
@@ -59,8 +85,14 @@ const Navbar = () => {
           <a>
             <p className="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
       
-          </a>
+          </a>      
+
         </Link>
+        <select onChange={handleSelectChange} value={language}>
+          <option>Selecione um idioma</option>
+          <option value="pt-BR">PT</option>
+          <option value="en-US">EN</option>
+        </select>
         <div>
           <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
             <li className='button-89 hover:border-b'>
@@ -82,7 +114,7 @@ const Navbar = () => {
               <Link href='/404'>Resume</Link>
             </li>
             <li className='button-89 hover:border-b'>
-              <Link href='/Front/resume'>Front-end</Link>
+              <Link href='/front/projects'>Front-end</Link>
             </li>
             <li className='button-89 hover:border-b'>
               <Link href='/#contact'>Contact</Link>
@@ -166,7 +198,7 @@ const Navbar = () => {
                   Resume
                 </li>
               </Link>
-              <Link href='/Front/resume'>
+              <Link href='/front/projects'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Front-end
                 </li>
