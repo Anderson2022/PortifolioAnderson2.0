@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 1rem;
+}
+
+main {
+  max-width: 130rem;
+  margin: 1rem auto;
+}
+
+ul {
+  background: #1C1B1B;
+
+  /* CSS Grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-auto-rows: 10rem;
+  grid-auto-flow: dense;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  min-width: 10rem;
+  display: block;
+}
+
+.movie {
+  transition: transform .3s;
+}
+
+.movie:hover {
+  transform: translate(-.5rem) scale(1.1);
+}
+
+.text--1,
+.text--2,
+.text--3,
+.big-fish,
+.pi {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.eternal,
+.guardians {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.wall-e,
+.burn {
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+.lebowski {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.drive,
+.fargo,
+.memento {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.icons--1 {
+  grid-row: span 5;
+}
+
+.icons--2,
+.icons--3 {
+  grid-row: span 2;
+}
+
+.icons--6 {
+  grid-column: span 2;
+}
+
+.icons--7 {
+  grid-column: span 3;
+}
+
+.icons--8 {
+  grid-column: span 5;
+}
+
+.icons--9,
+.icons--10 {
+  grid-column: span 4;
+}

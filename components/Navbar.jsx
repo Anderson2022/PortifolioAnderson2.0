@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-
+import Menu from './Menu'
 const I18N_STORAGE_KEY = 'i18nextLng';
 
 const Navbar = () => {
@@ -38,89 +38,41 @@ const Navbar = () => {
       window.location = window.location;
     }
   }
-  // const [position, setPosition] = useState('fixed')
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   if (
-  //     router.asPath === '/property' ||
-  //     router.asPath === '/crypto' ||
-  //     router.asPath === '/netflix' ||
-  //     router.asPath === '/twitch'
-  //   ) {
-  //     setNavBg('transparent');
-  //     setLinkColor('#ecf0f3');
-  //   } else {
-  //     setNavBg('#ecf0f3');
-  //     setLinkColor('#1f2937');
-  //   }
-  // }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
   };
-
-  useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
-    };
-    window.addEventListener('scroll', handleShadow);
-  }, []);
-
   return (
     <div
-      style={{ backgroundColor: `${navBg}` }}
-      className={
-        shadow
-          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
-          : 'fixed w-full h-20 z-[100]'
-      }
+      // style={{ backgroundColor: `${navBg}` }}
+      className={shadow ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300' : 'fixed w-full h-20 z-[100]'}
     >
-      <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
+      <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16 relative'> {/* Adicionado "relative" aqui */}
         <Link href='/'>
           <a>
             <p className="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
-      
-          </a>      
+          </a>
 
         </Link>
-        <select onChange={handleSelectChange} value={language}>
-          <option>Selecione um idioma</option>
-          <option value="pt-BR">PT</option>
-          <option value="en-US">EN</option>
+        <select
+          onChange={handleSelectChange} value={language}
+          className="dark:text-white hover:text-black border border-gray-800 hover:bg-gray-900 focus:ring-4 dark:text-white dark:text-white font-medium rounded-lg text-sm px-5 py-1.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-black-400 hover:text-black dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+          style={{
+            fontSize: '12px',
+            padding: '4px',
+            width: '7.8rem',
+            height: '2.0rem',
+            backgroundColor: '#414242',
+            color: 'white',
+            textAlignLast: 'center', // Alinha o texto horizontalmente no centro
+            appearance: 'none', // Remove a aparência padrão do seletor
+          }}
+        >
+          <option style={{ textAlign: 'center' }} value="pt-BR">Português</option>
+          <option style={{ textAlign: 'center' }} value="en-US">Inglês</option>
         </select>
         <div>
-          <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
-            <li className='button-89 hover:border-b'>
-              <Link href='/'>Home</Link>
-            </li>
-            <li className='button-89'>
-              <Link href='/#about'>About</Link>
-            </li>
-            <li className='button-89 button-89'>
-              <Link href='/#skills'>Skills</Link>
-            </li>
-            <li className='button-89 hover:border-b'>
-              <Link href='/#hobby'>Hobby</Link>
-            </li>
-            <li className='button-89 hover:border-b'>
-              <Link href='/#projects'>Projects</Link>
-            </li>
-            <li className='button-89 hover:border-b'>
-              <Link href='/404'>Resume</Link>
-            </li>
-            <li className='button-89 hover:border-b'>
-              <Link href='/front/projects'>Front-end</Link>
-            </li>
-            <li className='button-89 hover:border-b'>
-              <Link href='/#contact'>Contact</Link>
-            </li>
-          </ul>
-          {/* Hamburger Icon */}
+          <Menu linkColor="#ffffff" />
           <div
             style={{ color: `${linkColor}` }}
             onClick={handleNav}
@@ -130,15 +82,12 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {/* Overlay */}
       <div
         className={
           nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
         }
       >
-        {/* Side Drawer Menu */}
+
         <div
           className={
             nav
@@ -150,7 +99,7 @@ const Navbar = () => {
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
                 <a>
-                Andeson
+                  Andeson
                 </a>
               </Link>
               <div

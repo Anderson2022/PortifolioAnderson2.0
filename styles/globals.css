@@ -36,9 +36,10 @@ html {
   }
 }
 .button-89 {
+  width: 10rem;
   --b: 3px;
   /* border thickness */
-  --s: .45em;
+  --s: 1.45em;
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
@@ -66,3 +67,4 @@ html {
   background: var(--color);
   color: #fff;
 }
+
