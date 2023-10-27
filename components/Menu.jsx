@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 
 const Menu = ({ linkColor }) => {
@@ -56,7 +56,7 @@ const Menu = ({ linkColor }) => {
               <Link href='/404'>Resume</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
-              <Link href='/front/projects'>Front-end</Link>
+              <Link href='/projects'>Front-end</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/404'>Motion</Link>
