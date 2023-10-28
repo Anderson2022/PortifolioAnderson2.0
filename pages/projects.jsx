@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 import Arte from '../public/assets/Arte.png'
+import logo from '../public/assets/vue.png'
+import Fix from '../public/assets/fix.png'
+import Port from '../public/assets/porti.png'
+import loteria from '../public/assets/loetria.png'
 const Projects = () => {
   return (
     
@@ -13,7 +17,7 @@ const Projects = () => {
             <div className="flex flex-col items-center m-8">{/* Use a classe 'text-center' para centralizar o conteúdo */}
               <h3>Arte decoração</h3>
               <div className='flex items-center m-8'>
-                <Image src="/assets/vue.png" alt="" className="w-6 h-6 " />
+                <Image src={logo} alt="" className="w-6 h-6 " />
                 <h6>Vue.js</h6>
               </div>
               <a
@@ -46,13 +50,13 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="../public/assets/fix.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src={Fix} alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>DevFlix</h3>
               <div className="flex flex-col items-center m-8">
                 <p>Em Desenvolvimento</p>
-                <Image src="/assets/vue.png" alt="" className="w-6 h-6" />
+                <Image src={logo} alt="" className="w-6 h-6" />
                 <h6>Vue.js</h6>
               </div>
               <a
@@ -66,9 +70,7 @@ const Projects = () => {
                 </a>
             </div>
           </div>
-        </div>
-
-        
+        </div>     
 
         
         <div className="relative group">
@@ -86,13 +88,13 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="../public/assets/porti.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src={Port} alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
               <div className="flex flex-col items-center m-8">
                 <p>Em Desenvolvimento</p>
-                <Image src="/assets/vue.png" alt="" className="w-6 h-6" />
+                <Image src={logo} alt="" className="w-6 h-6" />
                 <h6>Vue.js</h6>
               </div>
               <a
@@ -123,13 +125,13 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="../public/assets/loetria.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src={loteria} alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
               <div className="flex flex-col items-center m-8">
                 <p>Em Desenvolvimento</p>
-                <Image src="/assets/vue.png" alt="" className="w-6 h-6" />
+                <Image src={logo} alt="" className="w-6 h-6" />
                 <h6>Vue.js</h6>
               </div>
               <a
