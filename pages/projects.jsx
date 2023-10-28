@@ -2,82 +2,156 @@ import React from 'react';
 
 const Projects = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">  
-      <div className="grid gap-4">
+    
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 "> 
+    
+      <div className="grid gap-4 mt-16">
         <div class="relative group">
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="" />
+          <img class="h-auto max-w-full rounded-lg" src="/assets/Arte.png" alt="" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="flex flex-col items-center m-8">{/* Use a classe 'text-center' para centralizar o conteúdo */}
+              <h3>Arte decoração</h3>
+              <div className='flex items-center m-8'>
+                <img src="/assets/vue.png" alt="" className="w-6 h-6 " />
+                <h6>Vue.js</h6>
+              </div>
+              <a
+                href='https://arte-decor-tapecaria-vue.vercel.app/'
+                target='_blank'
+                rel='noreferrer'
+              >
+              <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Visitar
+                </button> 
+                </a>
+            </div>
+
+           
+          </div>
+        </div>
+
+        <div class="relative group">
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
 
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+      </div>
+      <div className="grid gap-4 mt-16">
+        
+        <div class="relative group ">
+          <img class="h-auto  rounded-lg h-full" src="/assets/fix.png" alt="" />
+          <div class="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="text-center">
+              <h3>DevFlix</h3>
+              <div class="flex flex-col items-center m-8">
+                <p>Em Desenvolvimento</p>
+                <img src="/assets/vue.png" alt="" class="w-6 h-6" />
+                <h6>Vue.js</h6>
+              </div>
+              <a
+                href='https://developer-flix.vercel.app/'
+                target='_blank'
+                rel='noreferrer'
+              >
+              <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Visitar
+                </button>
+                </a>
+            </div>
           </div>
         </div>
 
+        
+
+        
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" /> */}
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        
+        <div class="relative group">
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
       </div>
-      <div className="grid gap-4">
+      <div className="grid gap-4 mt-16">
+        
+        <div class="relative group ">
+          <img class="h-auto  rounded-lg h-full" src="/assets/porti.png" alt="" />
+          <div class="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="text-center">
+              <h3>Loteria</h3>
+              <div class="flex flex-col items-center m-8">
+                <p>Em Desenvolvimento</p>
+                <img src="/assets/vue.png" alt="" class="w-6 h-6" />
+                <h6>Vue.js</h6>
+              </div>
+              <a
+                href='https://andersonportifolio.netlify.app'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                  Visitar
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
         
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
         
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
       </div>
-      <div className="grid gap-4">
+      <div className="grid gap-4 mt-16">
+        
+        <div class="relative group ">
+          <img class="h-auto  rounded-lg h-full" src="/assets/loetria.png" alt="" />
+          <div class="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="text-center">
+              <h3>Loteria</h3>
+              <div class="flex flex-col items-center m-8">
+                <p>Em Desenvolvimento</p>
+                <img src="/assets/vue.png" alt="" class="w-6 h-6" />
+                <h6>Vue.js</h6>
+              </div>
+              <a
+                href='https://jade-pithivier-081acd.netlify.app'
+                target='_blank'
+                rel='noreferrer'
+              >
+              <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Visitar
+                </button>
+                </a>
+            </div>
+          </div>
+        </div>
         
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
         
         <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
-          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
-          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-      </div>
-      <div className="grid gap-4">
-        
-        <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
-          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" />
-          <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div class="relative group">
-          <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
+          {/* <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" /> */}
           <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
         </div>
