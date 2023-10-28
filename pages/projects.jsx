@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import Loteria from '../public/assets/loetria.png'
-
+import Arte from '../public/assets/Arte.png'
 const Projects = () => {
   return (
     
@@ -9,7 +8,7 @@ const Projects = () => {
     
       <div className="grid gap-4 mt-16">
         <div className="relative group">
-          <Image className="h-auto max-w-full rounded-lg" src="../public/assets/Arte.png" alt="" />
+          <Image className="h-auto max-w-full rounded-lg" src={Arte} alt="" />
           <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="flex flex-col items-center m-8">{/* Use a classe 'text-center' para centralizar o conteúdo */}
               <h3>Arte decoração</h3>
@@ -124,7 +123,7 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <div className="h-auto  rounded-lg h-full" src="" alt="">{Loteria}</div>
+          <Image className="h-auto  rounded-lg h-full" src="../public/assets/loetria.png" alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
