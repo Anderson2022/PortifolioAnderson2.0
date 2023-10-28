@@ -8,7 +8,7 @@ const Projects = () => {
     
       <div className="grid gap-4 mt-16">
         <div className="relative group">
-          <Image className="h-auto max-w-full rounded-lg" src="/assets/Arte.png" alt="" />
+          <Image className="h-auto max-w-full rounded-lg" src="../public/assets/Arte.png" alt="" />
           <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="flex flex-col items-center m-8">{/* Use a classe 'text-center' para centralizar o conteúdo */}
               <h3>Arte decoração</h3>
@@ -46,7 +46,7 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="/assets/fix.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src="../public/assets/fix.png" alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>DevFlix</h3>
@@ -86,7 +86,7 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="/assets/porti.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src="../public/assets/porti.png" alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
@@ -123,7 +123,7 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="/assets/loetria.png" alt="" />
+          <Image className="h-auto  rounded-lg h-full" src="../public/assets/loetria.png" alt="" />
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
