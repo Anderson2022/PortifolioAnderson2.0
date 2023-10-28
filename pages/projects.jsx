@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Loteria from '../public/assets/loetria.png'
 
 const Projects = () => {
   return (
@@ -123,7 +124,7 @@ const Projects = () => {
       <div className="grid gap-4 mt-16">
         
         <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src="../public/assets/loetria.png" alt="" />
+          <div className="h-auto  rounded-lg h-full" src="" alt="">{netflixImg}</div>
           <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <div className="text-center">
               <h3>Loteria</h3>
