@@ -53,7 +53,7 @@ const Menu = ({ linkColor }) => {
               <Link href='/#projects'>Projects</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
-              <Link href='/404'>Resume</Link>
+              <Link href='/resume'>Resume</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/projects'>Front-end</Link>

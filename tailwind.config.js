@@ -7,7 +7,12 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('public/assets/red.png')",
+        
+      }
+    },
   },
   plugins: [require("tw-elements/dist/plugin.cjs")],
   darkMode: "class"

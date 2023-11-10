@@ -1,186 +1,242 @@
 import React from 'react';
 import Head from 'next/head';
+import Ddd from '../components/PathSymbols'; // Adjust the relative path based on your project structure
+import Agion from '../public/assets/projects/agion.jpg'
+import Tacto from '../public/assets/projects/logo-tacto.png'
+import Tra from '../public/assets/projects/transamerica.jpg'
+import Dom from '../public/assets/projects/dompixel_logo.jpg'
+import Modal from '../components/Modal'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import Image from 'next/image';
 
 const resume = () => {
   return (
     <>
-      <Head>
-        <title>Anderson | Resume</title>
-        <meta
-          name='description'
-          content='I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences.'
-        />
-        <link rel='icon' href='/fav.png' />
-      </Head>
+      <div className="pt-20 ">
+        <Head>
+          <title>Anderson | Resume</title>
+          <meta
+            name='description'
+            content='I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences.'
+          />
+          <link rel='icon' href='/fav.png' />
+        </Head>
 
-      <div className='max-w-[940px] mx-auto p-2 pt-[120px]'>
-        <h2 className='text-center'>Resume</h2>
-        <div className='bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center'>
-          <h2 className='text-center'>Clint Briley</h2>
-          <div className='flex'>
-            <a
-              href='https://www.linkedin.com/in/clint-briley-50056920a/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <FaLinkedinIn size={20} style={{ marginRight: '1rem' }} />
-            </a>
-            <a
-              href='https://github.com/fireclint'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <FaGithub size={20} style={{ marginRight: '1rem' }} />
-            </a>
+        <div className='max-w-[940px] mx-auto bg-neutral-800	shadow-lg shadow-black rounded-t-lg '>
+          <div className='flex flex-col'>
+            <div className='h-9 rounded-t-lg bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 flex items-center justify-center'>
+              <h2>Anderson da Silva Fernandes</h2>
+            </div>
+
+
+            <div className='flex w-full  p-4  justify-between items-center'>
+              <div className='flex-none w-2/4 h-14'>
+                <Ddd />
+              </div>
+              <div className='w-56 items-center text-white'>
+                <h1 className='text-lg justify-items-center'>Experiência Profissional</h1>
+                <p className='text-xs p-2 text-justify'>Atuo com o desenvolvimento de software de ponta a ponta, desde
+                  o levantamento de requisitos com as partes envolvidas no projeto, prototipação,
+                  codificação no lado do cliente e servidor, testes, documentação,
+                  implementação, até a apresentação para o cliente final, utilizando linguagens
+                  fortes no mercado, sempre atualizado e a nível de exigência internacional,
+                  trabalhando com metodologias ágeis.</p>
+              </div>
+              <div className='flex-none w-56 justify-center items-center text-center text-white'>
+                <h1 className='text-lg'>Educação</h1>
+                <h5>Cursando:</h5>
+                <p className='text-xs p-2 text-justify'>Engenharia de computação 10º semestre noturno</p>
+                <h4>Inglês:</h4>
+                <p className='text-xs p-2 text-justify'>Intermediário: Mais estudando frequentemente todos os dias</p>
+              </div>
+
+            </div>
+            <div className=' h-96 flex flex-row text-white p-4'>
+              <div className='flex-1 '>
+                <div className='flex flex-col p-4 border rounded-lg border-red-600 m-2 shadow-xl shadow-red-800'>
+                  <div className='flex flex-row  justify-center items-center text-center '>
+                    <div className=' w-14'>
+                      <Image className=' group-hover:opacity-10 rounded-full shadow-2xl' src={Agion} alt='/' />
+                    </div>
+                    <div className='justify-center items-center text-center '>
+                      <h1 className='text-lg'>Agion</h1>
+                      <h3 className='text-xs'>Estagiário</h3>
+                    </div>
+
+                  </div>
+                  <div> <p className='text-xs text-justify '>Analisa de suporte help desk
+                    Reformas de equipamentos </p></div>
+
+                </div>
+              </div>
+              <div className='flex-1'>
+                <div className='flex flex-col p-4 border rounded-lg border-red-600 m-2 shadow-xl shadow-red-800'>
+                  <div className='flex flex-row justify-center items-center text-center '>
+                    <div className='w-14'>
+                      <Image className=' group-hover:opacity-10 rounded-full shadow-2xl' src={Tacto} alt='/' />
+                    </div>
+                    <div className='justify-center items-center text-center '>
+                      <h1 className='text-lg'>Tacto Sistemas</h1>
+                      <h3 className='text-xs'>Analista de Sistemas</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <p className='text-xs text-justify '>
+                      Suporte técnico em Sistema ERP,
+                      Treinar e capacitar os usuários;
+                      Implantação do sistema através do SQL Server;
+                      Configuração de impressoras;
+                      Conceitos básicos de rede TCP/IP, DNS, Proxy;
+                      Instalação, Configuração, Manutenção de softwares, sistemas operacionais e hardwares;
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className='flex-1'>
+                <div className='flex flex-col p-4 border rounded-lg border-red-600 m-2 shadow-xl shadow-red-800'>
+                  <div className='flex flex-row justify-center items-center text-center '>
+                    <div className='w-14'>
+                      <Image className=' group-hover:opacity-10 rounded-full shadow-2xl' src={Tra} alt='/' />
+                    </div>
+                    <div className='justify-center items-center text-center '>
+                      <h1 className='text-lg'>Transamerica Serviços</h1>
+                      <h3 className='text-xs'>Office Boy</h3>
+                    </div>
+
+                  </div >
+                  <div className='text-xs text-justify '>
+                    <p className='text-xs'>Analisa de suporte help desk
+                      Reformas de equipamentos </p></div>
+
+                </div>
+              </div>
+              <div className='flex-1'>
+                <div className='flex flex-col p-4 border rounded-lg border-red-600 m-2 shadow-xl shadow-red-800'>
+                  <div className='flex flex-row justify-center items-center text-center '>
+                    <div className='w-14'>
+                      <Image className=' group-hover:opacity-10 rounded-full shadow-2xl' src={Dom} alt='/' />
+                    </div>
+                    <div className='justify-center items-center text-center '>
+                      <h1 className='text-lg'>Dom Pixel</h1>
+                      <h3 className='text-xs'>Desenvolvedor Back-end</h3>
+                    </div>
+                  </div>
+                  <div className='text-xs text-justify '>
+                    <p className='text-xs'>Trabalhei com Apis para projetos de clientes, como sistemas
+                      de pesquisas de personalidade, e sistemas de matrículas de
+                      cursos
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className='text-center py-4 text-xl font-bold uppercase tracking-wider'>
-          <div className='hidden sm:block'>
-            <p>
-              Proven Leadership <span className='px-1'>|</span> Web Development{' '}
-              <span className='px-1'>|</span> Complex Problem Solving
-            </p>
+
+
+          <div className='h-50 border p-4  relative text-cyan-50 bg-neutral-800 border-neutral-800 '>
+            <div className='hidden sm:block  rounded-lg border border-red-600 shadow-xl shadow-red-800 h-40'>
+              <p className='p-8'>
+                Estou à procura de novos
+                desafios profissionais buscando
+                uma efetivação no mercado,
+                visando o desenvolvimento de
+                um todo o trabalho e claro
+                gerando resultados. Conseguir
+                concretizar a forma de
+                possibilitar este crescimento
+                qualitativo e quantitativo para a
+                empresa.
+
+              </p>
+            </div>
+            <p className='absolute top-0 left-7 text-red-800 italic  font-mono text-2xl bg-neutral-800 '>OBJETIVOS</p>
           </div>
-          <div className='block sm:hidden'>
-            <p>Proven Leadership</p>
-            <p className='py-2'>Web Development</p>
-            <p>Complex Problem Solving</p>
+
+
+
+          <div className='text-center py-4 text-cyan-50 shadow-lg shadow-black bg-neutral-800'>
+            <div className='border-b-4 border-red-700 shadow-red-800 '>
+              <h5 className='text-center underline text-[18px] py-2 my-8'>Habilidades</h5>
+              <div className='flex flex-wrap '>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <span className='font-bold'>Habilidades técnicas</span>
+                </div>
+                <div className='w-1/2'>
+                  <p className='py-2 text-left'>
+                    <span className='px-2'>|</span>Full-Stack Web Developer<br />
+                    <span className='px-2'>|</span> HTML, CSS <br />
+                    <span className='px-2'>|</span>Javascript, Typescript <br />
+                    <span className='px-2'>|</span>React.js, Vue.js  <br />
+                    <span className='px-2'>|</span>Firebase, SQL, NoSQL, MySql, Redis<br />
+                    <span className='px-2'>|</span>Node.js, RESTAPI <br />
+                    <span className='px-2'>|</span>Tailwind <br />
+                  </p>
+                </div>
+              </div>
+              <div className='flex flex-wrap h-80 '>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2 mt-6'>Habilidades em Andamento</h5>
+                </div>
+                <div className='w-1/2 mt-6 text-left flex items-center'>
+                  <p className=''>
+                    <span className='px-2'>|</span>Java e Spring Boot Rest
+                  </p>
+                </div>
+              </div>
+              <div className='flex flex-wrap '>
+                <div className='w-1/2 border-r-4  border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2 mt-6'>Habilidades Técnicas</h5><br />
+                </div>
+                <div className='w-1/2 mt-6 text-left'>
+                  <p className=''>
+                    <span className='font-bold px-52 my-8'>Informática:</span><br />
+                    <span className='px-2 '>|</span>Proficiência em
+                    informática avançada <br />
+                    <span className='font-bold px-52 my-8'>Hardware:</span><br />
+                    <span className='px-2 '>|</span>Experiência em
+                    montagem e manutenção de
+                    hardware
+
+                  </p>
+                </div>
+              </div>
+              <div className='flex flex-wrap h-80'>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2'>Escolaridade</h5>
+                </div>
+                <div className='w-1/2 text-left flex items-center '>
+                  <p className='py-2'>
+                    <span className='font-bold px-52 my-8'>Cursando:</span><br />
+                    <span className='px-2'>|</span>Engenharia de computação 10º semestre noturno <br/>
+                    <span className='px-2'>|</span> Unic Universidade de Cuiabá <br />
+                    <span className='font-bold px-52 my-8'>Cursos:</span><br />
+                    <span className='px-2'>|</span>Ingles
+                    <span className='px-2'>|</span> Intermediário <br />
+                  </p>
+                </div>
+              </div>
+              <div className='flex flex-wrap h-80'>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2'>Certificações</h5>
+                </div>
+                <div className='w-1/2 mx-auto text-left flex items-center'>
+                  <Modal />
+                </div>
+
+              </div>
+
+              <div className='flex flex-wrap h-80'>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2'>Experiencia Voluntaria</h5>
+                </div>
+                <div className='w-1/2 text-left flex items-center '>
+                  <p className='py-2'>                 
+                    <span className='px-2'>|</span>Professor de informática no projeto Siminina Digital 120horas
+                   </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <p>
-          Analytical, innovative, and motivated web development professional
-          with experience in customer service, team leadership, and
-          organizational effectiveness in fast-paced and challenging
-          environments. Adept at developing strategies and driving streamlined
-          operations. Diverse analytical skills, team collaboration, and
-          relationship building. Consummate professional, and motivated leader,
-          with solid interpersonal abilities and complex problem-solving skills.
-          Effective and proven track record of critical thinking, idea
-          generation, and optimizing efficiencies.
-        </p>
-
-        {/* Skills */}
-        <div className='text-center py-4'>
-          <h5 className='text-center underline text-[18px] py-2'>Skills</h5>
-          <p className='py-2'>
-            <span className='font-bold'>Technical Skills</span>
-            <span className='px-2'>|</span>Front-End Web Developer
-            <span className='px-2'>|</span> HTML
-            <span className='px-2'>|</span>CSS
-            <span className='px-2'>|</span>Javascript
-            <span className='px-2'>|</span>React
-            <span className='px-2'>|</span>Next JS
-            <span className='px-2'>|</span>SQL
-            <span className='px-2'>|</span>NoSQL
-            <span className='px-2'>|</span>Redux
-            <span className='px-2'>|</span>Tailwind
-            <span className='px-2'>|</span> Firebase
-            <span className='px-2'>|</span> RESTAPI
-          </p>
-          <p className='py-2'>
-            <span className='font-bold'>Amazon Web Services</span>
-            <span className='px-2'>|</span>Amazon Web Services Cloud
-            Practitioner
-          </p>
-        </div>
-
-        <h5 className='text-center underline text-[18px] py-4'>
-          Professional Experience
-        </h5>
-        {/* Experience */}
-        <div className='py-6'>
-          <p className='italic'>
-            <span className='font-bold italic'>
-            INFINITE TECH
-            </span>
-            <span className='px-2'>|</span>Dallas, TX
-          </p>
-          <p className='py-1 italic'>Front End Web Developer & Web Master (2013 - Current)</p>
-          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
-            <li>
-              Ensured comprehensive mobile responsive UI layouts with
-              understanding of HTML, CSS, and JavaScript.
-            </li>
-            <li>
-              Troubleshoot issues and concerns, configure operation and analytic
-              plugins, and design changes as needed.
-            </li>
-            <li>
-              Worked directly with a diverse client base to understand and
-              implement multiple technologies and programs.
-            </li>
-            <li>
-              Platform migration managing DNS servers as well as MX records and
-              ensuring a smooth migration process.
-            </li>
-          </ul>
-        </div>
-
-
-        {/* Personal Experience */}
-        <div className='py-6'>
-          <p className='italic'>
-            <span className='font-bold italic'>
-              Teaching & Mentoring Web Development
-            </span>
-            <span className='px-2'>|</span>Dallas, TX
-          </p>
-          <p className='py-1 italic'>Code Commerce - Youtube Channel (2021 - Current)</p>
-          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
-            <li>
-              In 2021 I started “Code Commerce”, a YouTube channel focused on
-              sharing what I’m learning in web development, specifically
-              front-end development.
-            </li>
-            <li>
-              Private 1 on 1 Zoom coaching calls related to web development.
-              More specifically debugging, teaching basic web development
-              concepts and code reviews.
-            </li>
-          </ul>
-        </div>
-
-        {/*  */}
-        <h5 className='text-center underline text-[18px] py-4'>
-          Other Professional Experience
-        </h5>
-      
-        {/* Experience */}
-        <div className='py-6'>
-          <p className='italic'>
-            <span className='font-bold'>CITY OF SHERMAN, TX</span>
-            <span className='px-2'>|</span>Sherman, TX
-          </p>
-          <p className='py-1 italic'>Paramedic / Firefighter (2010 – 2019)</p>
-          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
-            <li>
-              Ensured proper implementation of firefighting techniques and
-              practices including controlling and extinguishing fires, operating
-              hose lines, and fire ground operations, ventilation, and search
-              and rescue.
-            </li>
-            <li>
-              Oversaw comprehensive understanding, operation, and maintenance of
-              fire engines, ladder trucks, technical rescue apparatus, and
-              response trailers.
-            </li>
-            <li>
-              Performed ALS techniques as needed within emergency situations
-              including the use of an esophageal or dual lumen airway device and
-              oral intubation using laryngoscopy.
-            </li>
-            <li>
-              Collaborated with a talented and high performing team of
-              firefighters in high pressure and stressful situations as needed.
-            </li>
-            <li>
-              Utilized proven and demonstrated knowledge of multiple
-              certifications including Pediatric Advanced Life Support,
-              Prehospital Trauma Life Support, and Advanced Cardiac Life
-              Support, among others.
-            </li>
-          </ul>
         </div>
       </div>
     </>
