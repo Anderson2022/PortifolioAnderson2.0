@@ -100,7 +100,7 @@ const Modal = () => {
 
                 <div className="px-6 py-4">
                
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
                   
                 </p>
               </div>
@@ -120,7 +120,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -140,7 +140,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -160,7 +160,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -180,7 +180,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -200,7 +200,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -220,7 +220,7 @@ const Modal = () => {
 
               <div className="px-6 py-4 h-20">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
@@ -241,7 +241,7 @@ const Modal = () => {
 
               <div className="px-6 py-4">
 
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
 
                 </p>
               </div>
