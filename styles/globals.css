@@ -73,7 +73,7 @@ html {
   height: 100vh;
   overflow: hidden;
 }
-.card {
+.cardss {
   position: relative;
   width: 200px;
   height: 250px;
@@ -137,3 +137,4 @@ html {
     transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
 }
+

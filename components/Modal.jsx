@@ -91,7 +91,7 @@ const Modal = () => {
 
         </div>
         <div className='grid grid-cols-3 gap-3 text-black'>
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={javaScript} alt='Sunset in the mountains' /> 
 
@@ -111,7 +111,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={modelagem} alt='Sunset in the mountains' />
 
@@ -131,7 +131,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={api} alt='Sunset in the mountains' />
 
@@ -151,7 +151,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>   
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={java} alt='Sunset in the mountains' />
 
@@ -171,7 +171,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={node} alt='Sunset in the mountains' />
 
@@ -191,7 +191,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={sockt} alt='Sunset in the mountains' />
 
@@ -211,7 +211,7 @@ const Modal = () => {
             </div>
             <div className="blob">dfgfds</div>
           </div>
-          <div className="card">
+          <div className="cardss">
             <div className="bg h-96">
               <Image className='w-full' src={geral} alt='Sunset in the mountains' />
 
@@ -232,7 +232,7 @@ const Modal = () => {
             <div className="blob">dfgfds</div>
           </div>
 
-          <div className="card">
+          <div className="cardss">
             <div className="bg">
               <Image className='w-full' src={adonis} alt='Sunset in the mountains' />
 
