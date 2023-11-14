@@ -58,6 +58,10 @@ const Menu = ({ linkColor }) => {
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/projects'>Front-end</Link>
             </li>
+
+            <li className='button-89 hover:border-b text-sm'>
+              <Link href='/projectsBack'>Back-end</Link>
+            </li>
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/404'>Motion</Link>
             </li>
