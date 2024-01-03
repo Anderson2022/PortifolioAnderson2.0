@@ -1,4 +1,4 @@
-import { Image, React, Arte, japa, Types2, adonis, redis, rpg, graduado, sql, carro, java, Script, Types, pdf, financeiro, script, sqldata, cache, trader, next, nest, docker, kafka } from '../pages/scripts/imports';
+import { Image, React, Arte, japa, Types2, adonis, redis, rpg, graduado, sql, carro, java, Script, Types, pdf, financeiro, script, sqldata, cache, trader, next, nest, docker, kafka } from '../pages/scripts/imports.js';
 
 
 const projetos = [
