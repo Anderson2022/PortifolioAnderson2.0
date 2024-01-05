@@ -6,8 +6,8 @@ const messages = {
             text:'I m focused on building backend web apps that integrate responsive frontend technologies.',
             titlesAbout: 'About',
             titlesH1: 'Who I am',
-            textAbout: "Im specializing in building responsive front- end UI apps for mobile devices that connect with APIs and other back- end technologies.I am passionate about learning new technologies and I understand that there is more than one way to accomplish a task.As a junior developer focused on the backend, I have been mainly dedicated to creating APIs using technologies such as Node.js, Adonis.js, and Prisma.js.My knowledge is most proficient in this area, and I am always looking to improve my skills in this area",
-            text1About:' I firmly believe that being a great developer is not just about mastering a specific language, but knowing how to choose the best tool for each job. My mindset is always to be open to learning and applying appropriate solutions to deliver high quality products. I have experience working directly with clients and taking simulated wireframes to deployed applications. In my free time I practice my hobby in motion design.job.',
+            textAbout: "I'm a junior backend developer specialized in creating APIs using technologies such as Node.js, Adonis.js, and Prisma.js. I have a passion for learning new technologies and am constantly refining my skills. My primary focus is on developing efficient backend solutions, connecting responsive mobile UI applications to APIs and other backend technologies.",
+            text1About:' I firmly believe that being a great developer is not just about mastering a specific language, but knowing how to choose the best tool for each job. My mindset is always to be open to learning and applying appropriate solutions to deliver high quality products. I have experience working directly with clients and taking simulated wireframes to deployed applications.',
             text2About: ' Check out some of my latest projects.',
           
             titleContact: 'Contact',

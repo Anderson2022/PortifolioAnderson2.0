@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaFacebook, FaBlenderPhone } from 'react-icons/fa';
 import { i18n } from '../translate/i18n'
 const Main = () => {
   return (
@@ -51,16 +51,27 @@ const Main = () => {
                 <FaGithub />
               </div>
             </a>
+            
             <Link href='/#contact'>
               <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
                 <AiOutlineMail />
               </div>
             </Link>
-            <Link href='/'>
+            <Link href='/resume'>
               <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
                 <BsFillPersonLinesFill />
               </div>
             </Link>
+
+            <a
+          href='https://api.whatsapp.com/send?phone=+55+5565996321128&text=Ol%C3%A1%2C+Anderson+Silva'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
+                <FaBlenderPhone />
+              </div>
+            </a>
           </div>
         </div>
       </div>

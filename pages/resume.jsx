@@ -8,6 +8,9 @@ import Dom from '../public/assets/projects/dompixel_logo.jpg'
 import Modal from '../components/Modal'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import Image from 'next/image';
+import Link from 'next/link';
+
+
 
 const resume = () => {
   return (
@@ -38,16 +41,14 @@ const resume = () => {
                 <p className='text-xs p-2 text-justify'>Atuo com o desenvolvimento de software de ponta a ponta, desde
                   o levantamento de requisitos com as partes envolvidas no projeto, prototipação,
                   codificação no lado do cliente e servidor, testes, documentação,
-                  implementação, até a apresentação para o cliente final, utilizando linguagens
-                  fortes no mercado, sempre atualizado e a nível de exigência internacional,
-                  trabalhando com metodologias ágeis.</p>
+                  implementação, até a apresentação para o cliente final.</p>
               </div>
               <div className='flex-none w-56 justify-center items-center text-center text-white'>
                 <h1 className='text-lg'>Educação</h1>
                 <h5>Cursando:</h5>
                 <p className='text-xs p-2 text-justify'>Engenharia de computação 10º semestre noturno</p>
                 <h4>Inglês:</h4>
-                <p className='text-xs p-2 text-justify'>Intermediário: Mais estudando frequentemente todos os dias</p>
+                <p className='text-xs p-2 text-justify'>Intermediário</p>
               </div>
 
             </div>
@@ -233,6 +234,19 @@ const resume = () => {
                   <p className='py-2'>                 
                     <span className='px-2'>|</span>Professor de informática no projeto Siminina Digital 120horas
                    </p>
+                </div>
+              </div>
+
+              <div className='flex flex-wrap h-80'>
+                <div className='w-1/2 border-r-4 border-double border-red-700 flex items-center justify-center'>
+                  <h5 className='text-center underline text-[18px] py-2'>Currículo</h5>
+                </div>
+                <div className='w-1/2 text-left flex items-center justify-center'>
+                  <Link href="/Anderson.pdf" passHref>
+                    <a download="Anderson_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-500 text-white border border-gray-500 py-2 px-4 rounded transition hover:bg-orange-500">
+                      Download CV
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
