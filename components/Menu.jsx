@@ -34,7 +34,7 @@ const Menu = ({ linkColor }) => {
         Menu
       </label>
       {isOpen && (
-        <div className="dropdown-content  rounded-lg absolute mt-5  right-0 z-[2] card card-compact w-57 p-4 shadow bg-stone-700 text-primary-content flex-col-reverse">
+        <div className="dropdown-content  rounded-lg absolute mt-5  right-0 z-[2] card card-compact w-57 p-4 shadow bg-stone-700 text-primary-content flex-col-reverse w-[21rem] left-10">
           <ul style={{ color: `${linkColor}` }} className="md:grid md:grid-cols-3 md:flex-col-reverse ml-4">
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/'>Home</Link>

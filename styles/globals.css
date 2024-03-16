@@ -35,26 +35,31 @@ html {
     @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
   }
 }
+.button-container {
+  /* Certifique-se de que a largura total seja suficiente para acomodar ambos os botões */
+  width: 22rem; /* Ajuste conforme necessário */
+}
+
 .button-89 {
-  width: 10rem;
-  --b: 3px;
-  /* border thickness */
-  --s: 1.45em;
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  width: calc(50% - 5px); /* Calcule a largura de cada botão com margem entre eles */
+  --b: 3px; /* Espessura da borda */
+  --s: 1em;
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
+  background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
-  outline-offset: .6em;
+  outline-offset: 0.6em;
   font-size: 16px;
   border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  display: inline-block;
+  margin-right: 5px; /* Ajuste o espaçamento entre os botões conforme necessário */
 }
+
 
 .button-89:hover,
 .button-89:focus-visible {
