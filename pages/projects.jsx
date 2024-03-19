@@ -4,6 +4,7 @@ import Arte from '../public/assets/Arte.png'
 import logo from '../public/assets/vue.png'
 import Fix from '../public/assets/fix.png'
 import Port from '../public/assets/porti.png'
+import rio from '../public/assets/projects/riopiscinas.png'
 import loteria from '../public/assets/loetria.png'
 const Projects = () => {
   return (
@@ -156,6 +157,28 @@ const Projects = () => {
         <div className="relative group">
           {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" /> */}
           <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        <div className="relative group ">
+          <Image className=" rounded-lg h-full" src={rio} alt="" />
+          <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="text-center">
+              <h3>Loja</h3>
+              <div className="flex flex-col items-center m-8">
+                <p></p>
+                <Image src={logo} alt="" className="w-6 h-6" />
+                <h6>Vue.js</h6>
+              </div>
+              <a
+                href='https://www.riopiscinascacoal.com/'
+                target='_blank'
+                rel='noreferrer'
+              >
+              <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Visitar
+                </button>
+                </a>
+            </div>
           </div>
         </div>
       </div>

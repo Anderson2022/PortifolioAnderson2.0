@@ -3,6 +3,7 @@ import propertyImg from '../public/assets/projects/property.jpg';
 import cryptoImg from '../public/assets/projects/crypto.jpg'
 import netflixImg from '../public/assets/projects/netflix.jpg'
 import twitchImg from '../public/assets/projects/twitch.jpg'
+import rio from '../public/assets/projects/riopiscinas.png'
 import ProjectItem from './ProjectItem';
 import { i18n } from '../translate/i18n';
 
@@ -40,6 +41,13 @@ const Projects = () => {
             backgroundImg={twitchImg}
             projectUrl='/twitch'
             tech='Next JS'
+
+          />
+              <ProjectItem
+            title='Rio Piscinas Cacoal'
+            backgroundImg={rio}
+            projectUrl='https://www.riopiscinascacoal.com/'
+            tech='Vue JS'
 
           />
         </div>
