@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import Image from 'next/image';
+ import Image from 'next/image';
 import Link from 'next/link';
+import Arte from '../public/assets/barra-de-menu.png'
 
 const Menu = ({ linkColor }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +30,12 @@ const Menu = ({ linkColor }) => {
   }, [isOpen]);
 
   return (
-    <div ref={dropdownRef} className="dropdown ">
+    <div ref={dropdownRef} className="dropdown w-14">
       <label onClick={handleToggle} tabIndex={0} className="text-4xl font-black text-gray-900 dark:text-white">
-        Menu
+      <Image className="w-1 fill-black" src={Arte} alt="" />
       </label>
       {isOpen && (
-        <div className="dropdown-content  rounded-lg absolute mt-5  right-0 z-[2] card card-compact w-57 p-4 shadow bg-stone-700 text-primary-content flex-col-reverse ">
+        <div className="dropdown-content  rounded-lg absolute mt-5  right-0 z-[2] card card-compact w-57 p-4 shadow bg-stone-700 text-primary-content flex-col-reverse text-center ">
           <ul style={{ color: `${linkColor}` }} className="md:grid md:grid-cols-3 md:flex-col-reverse ml-4">
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/'>Home</Link>
@@ -63,7 +64,7 @@ const Menu = ({ linkColor }) => {
               <Link href='/projectsBack'>Back-end</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
-              <Link href='/404'>Motion</Link>
+              <Link href='/movies'>Motion</Link>
             </li>
             <li className='button-89 hover:border-b text-sm'>
               <Link href='/#contact'>Contact</Link>

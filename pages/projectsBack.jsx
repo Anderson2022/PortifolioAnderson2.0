@@ -100,29 +100,28 @@ const projetos = [
 const Projects = () => {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-8 shadow-lg ">
-      </div>
+   
       <div className=' w-screen pt-8'>
-        <div className="flex flex-wrap mt-16 w-screen  relative">
-          <div className="w-1/2 flex justify-center items-center">
+        <div className="flex flex-wrap mt-16 md:w-screen relative">
+          <div className="md:w-1/2 w-36 flex justify-center items-center">
             <div className='w-60 flex justify-center items-center'>
               <Image className="w-50 rounded-lg mx-auto drop-shadow-xl" src={Arte} alt="" />
             </div>
           </div>
-          <div className='w-1/2 h-60  p-8 relative'>
-            <h1>Back-end</h1>
-            <div className='grid grid-cols-3 gap-3 inset-x-0 bottom-0 absolute mb-8 px-8  flex justify-center items-center'>
+          <div className='md:w-1/2 h-60  p-8 relative '>
+            <h1 className=''>Back-end</h1>
+            <div className='grid grid-cols-3 gap-3 inset-x-0 bottom-0 absolute mb-8 px-8 w-64 md:w-96 justify-center items-center'>
               <div className='flex flex-col items-center'>
                 <Image className="w-50 rounded-lg mx-auto drop-shadow-xl" src={Script} alt="" />
-                <h3 className="mt-2">JavaScript</h3>
+                <h3 className="mt-2 text-sm">JavaScript</h3>
               </div>
               <div className='flex flex-col items-center'>
                 <Image className="w-50 rounded-lg mx-auto drop-shadow-xl" src={java} alt="" />
-                <h3 className="mt-2">Java</h3>
+                <h3 className="mt-2 text-sm">Java</h3>
               </div>
               <div className='flex flex-col items-center'>
                 <Image className="w-50 rounded-lg mx-auto drop-shadow-xl" src={Types} alt="" />
-                <h3 className="mt-2">TypeScript</h3>
+                <h3 className="mt-2 text-sm">TypeScript</h3>
               </div>
             </div>
 
@@ -131,7 +130,7 @@ const Projects = () => {
         </div>
 
         <div className='w-screen flex justify-center items-center  '>
-          <div className='grid grid-cols-4 gap-4'>
+          <div className='grid grid-cols-1 gap-4 md:grid-cols-4'>
             {projetos.map((projeto) => (
               <div key={projeto.id} className='shadow-lg h-56 w-72 border-8 border-opacity-25 transform transition-transform duration-300 hover:scale-105'>
                 <div className='flex flex-wrap p-2'>

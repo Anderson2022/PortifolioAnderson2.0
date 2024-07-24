@@ -31,9 +31,7 @@ html {
     @apply cursor-pointer
   }
 
-  button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
-  }
+
 }
 .button-container {
   /* Certifique-se de que a largura total seja suficiente para acomodar ambos os botões */
@@ -41,7 +39,7 @@ html {
 }
 
 .button-89 {
-  width: calc(133% - 185px); /* Calcule a largura de cada botão com margem entre eles */
+  width: calc(100% - 0px); /* Calcule a largura de cada botão com margem entre eles */
   --b: 3px; /* Espessura da borda */
   --s: 1em;
   padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
@@ -143,3 +141,52 @@ html {
   }
 }
 
+.youtube-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-wrap {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.playlist-wrap {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 100px); /* Ajuste conforme necessário */
+}
+
+.fluid-ratio-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.fluid-ratio-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-responsive {
+  object-fit: cover;
+}
+
+.playlist-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 120px;
+  margin-right: 10px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+}
