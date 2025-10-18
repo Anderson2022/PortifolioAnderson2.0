@@ -96,7 +96,9 @@ export default function Resume() {
                 <p><b>EMAIL:</b> andersonsfernandes@hotmail.com</p>
               </div>
               <h2 className="font-bold text-lg mt-6 mb-2 tracking-widest">SOBRE MIM</h2>
-              <p className="text-xs text-gray-700">Desenvolvedor de software com experiência em projetos web, APIs, automação e suporte. Apaixonado por tecnologia, sempre buscando inovação e resultados.</p>
+              <div className="text-xs text-gray-700">
+                <p>Desenvolvedor de software com experiência em projetos web, APIs, automação e suporte. Apaixonado por tecnologia, sempre buscando inovação e resultados.</p>
+              </div>
             </div>
             {/* Interesses e Círculos */}
             <div className="flex-1 flex flex-col gap-4 items-center">

@@ -62,7 +62,11 @@ const Main = () => {
                 <BsFillPersonLinesFill />
               </div>
             </Link>
-
+            <Link href='/test'>
+              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:bg-orange-500 hover:scale-110 ease-in duration-300'>
+                <BsFillPersonLinesFill />
+              </div>
+            </Link>
             <a
           href='https://api.whatsapp.com/send?phone=+55+5565996321128&text=Ol%C3%A1%2C+Anderson+Silva'
               target='_blank'
