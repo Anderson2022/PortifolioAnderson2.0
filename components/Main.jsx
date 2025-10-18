@@ -7,12 +7,8 @@ import { i18n } from '../translate/i18n'
 const Main = () => {
   return (
     <div id='home' className='w-full h-screen text-center'>
-      <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
+      <div className='max-w-[1240px] w-full h-full mx-auto px-10 flex justify-center items-center'>
         <div>
-          <p className='uppercase text-sm tracking-widest text-gray-600'>
-          
-          </p>
-          <h1></h1>
           <h1 className='py-4 text-gray-700'>
             {i18n.t('titles')}
            <span className='text-[#5651e5]'> Anderson</span>
@@ -21,7 +17,7 @@ const Main = () => {
           <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
             {i18n.t('text')}
           </p>
-          <div className='flex items-center justify-between max-w-[330px] m-auto py-4'>
+          <div className='flex flex-wrap items-center justify-center gap-4 w-full max-w-lg m-auto p-4 sm:p-0'>
             <a
               href='https://www.linkedin.com/in/anderson-silva-346255160/'
               target='_blank'
