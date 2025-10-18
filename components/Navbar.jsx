@@ -16,6 +16,18 @@ const Navbar = () => {
 
 
   useEffect(() => {
+    // Rastreia o visitante uma vez por sessão para evitar múltiplas contagens.
+    // Este código chama a API que salva os dados no Firebase.
+    if (!sessionStorage.getItem('visitorTracked')) {
+      fetch('/api/track', { method: 'POST' })
+        .then(() => {
+          sessionStorage.setItem('visitorTracked', 'true');
+        })
+        .catch(err => console.error("Falha ao rastrear visitante:", err));
+    }
+  }, []);
+
+  useEffect(() => {
     const storedLanguage = getStoredLanguage();
     setLanguage(storedLanguage || 'default_language_value');
   }, []);

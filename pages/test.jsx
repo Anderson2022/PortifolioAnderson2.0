@@ -3,7 +3,7 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from '../libs/firebase';
 import Head from 'next/head';
 
-const TestPage = () => {
+const VisitorsPage = () => {
   const [visitors, setVisitors] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +34,7 @@ const TestPage = () => {
   return (
     <>
       <Head>
-        <title>Admin | Visitantes</title>
+        <title>Visitantes do Portfólio</title>
       </Head>
       <div className="min-h-screen bg-gray-100 py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -81,4 +81,4 @@ const TestPage = () => {
   );
 };
 
-export default TestPage;
+export default VisitorsPage;
