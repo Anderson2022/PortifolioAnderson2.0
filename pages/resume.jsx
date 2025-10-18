@@ -90,10 +90,10 @@ export default function Resume() {
             <div className="flex-1">
               <h2 className="font-bold text-lg mb-2 tracking-widest">INFORMAÇÕES</h2>
               <div className="text-sm leading-6">
-                <p><b>IDADE:</b> 29</p>
+                <p><b>IDADE:</b> 32</p>
                 <p><b>CIDADE:</b> Cuiabá</p>
-                <p><b>TELEFONE:</b> (65) 99999-9999</p>
-                <p><b>EMAIL:</b> anderson@email.com</p>
+                <p><b>TELEFONE:</b> (65) 99280-3826</p>
+                <p><b>EMAIL:</b> andersonsfernandes@hotmail.com</p>
               </div>
               <h2 className="font-bold text-lg mt-6 mb-2 tracking-widest">SOBRE MIM</h2>
               <p className="text-xs text-gray-700">Desenvolvedor de software com experiência em projetos web, APIs, automação e suporte. Apaixonado por tecnologia, sempre buscando inovação e resultados.</p>
@@ -210,7 +210,7 @@ export default function Resume() {
           </div>
         </div>
         {/* Lado Direito */}
-        <div className="md:w-1/3 bg-yellow-400 flex flex-col items-center justify-between p-8 relative min-h-[600px]">
+        {/* <div className="md:w-1/3 bg-yellow-400 flex flex-col items-center justify-between p-8 relative min-h-[600px]">
           <div className="absolute top-8 right-8 flex gap-4">
             <a href="#" className="text-black text-2xl font-bold hover:scale-110 transition-transform">Be</a>
             <a href="#" className="text-black text-2xl font-bold hover:scale-110 transition-transform">G+</a>
@@ -221,7 +221,7 @@ export default function Resume() {
               <Image src={profilePic} alt="Foto de perfil" width={180} height={180} className="rounded-lg border-4 border-white shadow-xl object-cover" />
             </motion.div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
