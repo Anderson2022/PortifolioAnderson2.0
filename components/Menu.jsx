@@ -77,10 +77,7 @@ const Menu = ({ linkColor }) => {
             </li>
             <li className='button-89 hover:border-b text-sm font-bold tracking-wide uppercase font-mono transition-colors duration-200 hover:text-blue-600' onClick={() => setIsOpen(false)}>
               <Link href='/projectsBack'>Back-end</Link>
-            </li>
-            <li className='button-89 hover:border-b text-sm font-bold tracking-wide uppercase font-mono transition-colors duration-200 hover:text-blue-600' onClick={() => setIsOpen(false)}>
-              <Link href='/movies'>Motion</Link>
-            </li>
+            </li> 
             <li className='button-89 hover:border-b text-sm font-bold tracking-wide uppercase font-mono transition-colors duration-200 hover:text-blue-600' onClick={() => setIsOpen(false)}>
               <Link href='/#contact'>Contact</Link>
             </li>    

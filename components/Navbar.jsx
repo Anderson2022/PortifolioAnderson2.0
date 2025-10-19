@@ -3,17 +3,15 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Menu from './Menu'
 const I18N_STORAGE_KEY = 'i18nextLng';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#ECF0F3');
   const [linkColor, setLinkColor] = useState('#fafffe');
-  const [language, setLanguage] = useState('');
-
+  // Inicia como `undefined` para evitar erro de hidratação.
+  const [language, setLanguage] = useState(undefined);
 
   useEffect(() => {
     // Rastreia o visitante uma vez por sessão para evitar múltiplas contagens.
@@ -28,8 +26,11 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    // Este efeito só roda no cliente, após a montagem inicial.
+    // Isso garante que a leitura do localStorage não cause erro de hidratação.
     const storedLanguage = getStoredLanguage();
-    setLanguage(storedLanguage || 'default_language_value');
+    // Define o idioma do localStorage ou um padrão ('pt-BR') se nada for encontrado.
+    setLanguage(storedLanguage || 'pt-BR');
   }, []);
 
   const getStoredLanguage = () => {
@@ -51,9 +52,6 @@ const Navbar = () => {
     }
   }
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
   return (
     <div
       style={{ backgroundColor: `${navBg}` }}
@@ -61,40 +59,35 @@ const Navbar = () => {
     >
       <div className='flex justify-between  items-center w-full h-full px-10 2xl:px-16 relative'> {/* Adicionado "relative" aqui */}
         <Link href='/'>
-          <a>
-            <p className="text-4xl font-black text-gray-900 dark:text-white">Anderson</p>
-          </a>
-
+          <p className="text-4xl font-black text-gray-900 dark:text-white cursor-pointer">Anderson</p>
         </Link>
         <div className="flex justify-center items-center w-full">
-          <select
-            onChange={handleSelectChange} value={language}
-            className="hover:text-white border border-gray-800
-     hover:bg-gray-900 focus:ring-4 dark:text-white font-medium 
-      rounded-lg text-center dark:border-gray-600
-        dark:text-black-400
-          dark:hover:bg-gray-600
-           dark:focus:ring-gray-800
-           md:w-32 w-20 text-xs
-           md:text-sm bg-black text-white
-           appearance-none justify-center
-           justify-items-center
-           h-10 mx-auto"
-          >
-            <option className='h-10 text-center' value="pt-BR">Português</option>
-            <option className='h-10 text-center' value="en-US">Inglês</option>
-          </select>
+          {/* Renderiza o select apenas no cliente para evitar o mismatch */}
+          {language !== undefined && (
+            <select
+              onChange={handleSelectChange} value={language}
+              className="hover:text-white border border-gray-800
+       hover:bg-gray-900 focus:ring-4 dark:text-white font-medium 
+        rounded-lg text-center dark:border-gray-600
+          dark:text-black-400
+            dark:hover:bg-gray-600
+             dark:focus:ring-gray-800
+             md:w-32 w-20 text-xs
+             md:text-sm bg-black text-white
+             appearance-none justify-center
+             justify-items-center
+             h-10 mx-auto"
+            >
+              <option className='h-10 text-center' value="pt-BR">Português</option>
+              <option className='h-10 text-center' value="en-US">Inglês</option>
+            </select>
+          )}
         </div>
 
-        <div>
           <Menu linkColor="#ffffff" />
-          <div
-            style={{ color: `${linkColor}` }}
-            onClick={handleNav}
+        <div
             className='md:hidden'
-          >
-
-          </div>
+        >
         </div>
       </div>
 
