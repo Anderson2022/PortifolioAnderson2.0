@@ -6,6 +6,14 @@ module.exports = {
     domains: ['cursos.alura.com.br','d1ih8jugeo2m5m.cloudfront.net', 'placehold.it','drive.google.com','via.placeholder.com' ],
   },
   webpack(config) {
+    config.resolve.extensions.push('.mjs');
+
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: 'javascript/auto',
+    });
+
     config.module.rules.push({
       test: /\.(mp4|webm|ogg|swf|ogv)$/,
       use: {

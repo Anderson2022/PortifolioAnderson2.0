@@ -66,17 +66,7 @@ const Navbar = () => {
           {language !== undefined && (
             <select
               onChange={handleSelectChange} value={language}
-              className="hover:text-white border border-gray-800
-       hover:bg-gray-900 focus:ring-4 dark:text-white font-medium 
-        rounded-lg text-center dark:border-gray-600
-          dark:text-black-400
-            dark:hover:bg-gray-600
-             dark:focus:ring-gray-800
-             md:w-32 w-20 text-xs
-             md:text-sm bg-black text-white
-             appearance-none justify-center
-             justify-items-center
-             h-10 mx-auto"
+              className="neumorphic-select md:w-32 w-24 text-xs md:text-sm h-10 mx-auto"
             >
               <option className='h-10 text-center' value="pt-BR">Português</option>
               <option className='h-10 text-center' value="en-US">Inglês</option>

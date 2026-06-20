@@ -38,37 +38,76 @@ html {
   width: 22rem; /* Ajuste conforme necessário */
 }
 
-.button-89 {
-  width: calc(100% - 0px); /* Calcule a largura de cada botão com margem entre eles */
-  --b: 3px; /* Espessura da borda */
-  --s: 1em;
-  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: 0.3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: 0.6em;
+.button-89,
+.neumorphic-button {
+  width: calc(100% - 0px);
+  padding: 1rem 1.2rem;
+  color: #111827;
+  background: #ecf0f3;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.12), -8px -8px 18px rgba(255, 255, 255, 0.9);
+  transition: box-shadow 200ms ease, transform 200ms ease, background 200ms ease, color 200ms ease;
   font-size: 16px;
-  border: 0;
+  cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 5px; /* Ajuste o espaçamento entre os botões conforme necessário */
+  margin-bottom: 0.5rem;
 }
-
 
 .button-89:hover,
-.button-89:focus-visible {
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
+.button-89:focus-visible,
+.neumorphic-button:hover,
+.neumorphic-button:focus-visible {
+  box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.08), inset -4px -4px 12px rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  color: #111827;
 }
 
-.button-89:active {
-  background: var(--color);
-  color: #fff;
+.button-89:active,
+.neumorphic-button:active,
+.neumorphic-select:active {
+  box-shadow: inset 6px 6px 14px rgba(0, 0, 0, 0.12), inset -6px -6px 14px rgba(255, 255, 255, 0.9);
+  background: #e2e8f0;
+  color: #111827;
+}
+
+.neumorphic-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #ecf0f3;
+  color: #111827;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.12), -8px -8px 18px rgba(255, 255, 255, 0.9);
+  padding: 0 1rem 0 1rem;
+  padding-right: 2.5rem;
+  outline: none;
+  transition: box-shadow 200ms ease, transform 200ms ease, background 200ms ease, color 200ms ease;
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  background-image: linear-gradient(45deg, transparent 50%, #111827 50%), linear-gradient(135deg, #111827 50%, transparent 50%);
+  background-position: right 1rem center, right 1.35rem center;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.neumorphic-select:hover,
+.neumorphic-select:focus {
+  box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.08), inset -4px -4px 12px rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.neumorphic-select option {
+  background: #ecf0f3;
+  color: #111827;
 }
 
 #chart-container {
@@ -191,18 +230,60 @@ html {
   align-items: center;
 }
 
-/* MENU HAMBURGUER ANIMADO */
+/* MENU HAMBURGUER NEOMORFO */
 .menu {
-  background-color: transparent;
-  border: none;
+  background: #ecf0f3;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.12), -10px -10px 20px rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  display: flex;
-  padding: 0;
+  display: inline-flex;
+  padding: 14px;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.menu:hover {
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1), -6px -6px 15px rgba(255, 255, 255, 0.9);
+}
+
+.menu:active {
+  transform: translateY(1px);
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.12), inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-content {
+  background: #ecf0f3;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.12), -20px -20px 50px rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-content ul {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.dropdown-content li {
+  background: #ecf0f3;
+  border-radius: 18px;
+  padding: 0.8rem 1rem;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.dropdown-content li:hover {
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.dropdown-content li a {
+  display: block;
+  color: #111827;
 }
 
 .line {
   fill: none;
-  stroke: black;
+  stroke: #4b5563;
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);

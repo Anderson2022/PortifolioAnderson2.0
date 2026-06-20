@@ -1,189 +1,189 @@
-import Image from 'next/image';
-import React from 'react';
-import Arte from '../public/assets/Arte.png'
-import logo from '../public/assets/vue.png'
-import Fix from '../public/assets/fix.png'
-import Port from '../public/assets/porti.png'
-import rio from '../public/assets/projects/riopiscinas.png'
-import loteria from '../public/assets/loetria.png'
-const Projects = () => {
+import React, { useState, useMemo } from 'react';
+import { PROJECTS_DATA } from '../data/projects';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import FilterBar from '../components/FilterBar';
+import ProjectCard3D from '../components/ProjectCard3D';
+import ProjectListCard from '../components/ProjectListCard';
+import ProjectModal from '../components/ProjectModal';
+import ContactModal from '../components/ContactModal';
+import Footer from '../components/Footer';
+import { Sparkles, FileQuestion } from 'lucide-react';
+
+const App = () => {
+  // State for Filtering & Views
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedStatus, setSelectedStatus] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState('grid');
+
+  // State for Modals
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
+  // Filter Logic
+  const filteredProjects = useMemo(() => {
+    return PROJECTS_DATA.filter((project) => {
+      // Category filter
+      if (selectedCategory !== 'all' && project.category !== selectedCategory) {
+        return false;
+      }
+      
+      // Status filter
+      if (selectedStatus !== 'all' && project.status !== selectedStatus) {
+        return false;
+      }
+
+      // Search query filter
+      if (searchQuery.trim() !== '') {
+        const query = searchQuery.toLowerCase();
+        const matchesTitle = project.title.toLowerCase().includes(query);
+        const matchesDesc = project.description.toLowerCase().includes(query);
+        const matchesTech = project.tech.some((t) => t.toLowerCase().includes(query));
+        const matchesSubtitle = project.subtitle.toLowerCase().includes(query);
+
+        if (!matchesTitle && !matchesDesc && !matchesTech && !matchesSubtitle) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }, [selectedCategory, selectedStatus, searchQuery]);
+
+  // Scroll to filter section helper
+  const handleExploreClick = () => {
+    const el = document.getElementById('filter-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Count active projects for Header
+  const activeCount = useMemo(() => {
+    return PROJECTS_DATA.filter(p => p.status === 'active').length;
+  }, []);
+
   return (
-    
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 "> 
-    
-      <div className="grid gap-4 mt-16">
-        <div className="relative group">
-          <Image className="h-auto max-w-full rounded-lg" src={Arte} alt="" />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="flex flex-col items-center m-8">{/* Use a classe 'text-center' para centralizar o conteúdo */}
-              <h3>Arte decoração</h3>
-              <div className='flex items-center m-8'>
-                <Image src={logo} alt="" className="w-6 h-6 " />
-                <h6>Vue.js</h6>
-              </div>
-              <a
-                href='https://arte-decor-tapecaria-vue.vercel.app/'
-                target='_blank'
-                rel='noreferrer'
-              >
-              <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                Visitar
-                </button> 
-                </a>
-            </div>
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-cyan-500 selection:text-white">
+      
+      {/* Top sticky header */}
+      <Header 
+        onOpenContact={() => setIsContactOpen(true)} 
+        projectCount={activeCount} 
+      />
 
-           
+      {/* Hero Presentation */}
+      <Hero onExploreClick={handleExploreClick} />
+
+      {/* Main Content Area */}
+      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        
+        {/* Filter Toolbar */}
+        <FilterBar
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+          selectedStatus={selectedStatus}
+          onSelectStatus={setSelectedStatus}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          filteredCount={filteredProjects.length}
+        />
+
+        {/* Projects Display View */}
+        {filteredProjects.length === 0 ? (
+          /* Empty state */
+          <div className="my-16 p-12 rounded-3xl bg-white border border-slate-200 text-center max-w-xl mx-auto shadow-lg">
+            <div className="w-16 h-16 rounded-2xl bg-slate-100 text-cyan-500 mx-auto flex items-center justify-center mb-6 border border-slate-200">
+              <FileQuestion className="w-8 h-8 animate-pulse" />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">
+              Nenhum projeto encontrado
+            </h3>
+            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+              Sua busca não encontrou resultados para a combinação de filtros selecionada. Tente remover os filtros ou redefinir sua busca.
+            </p>
+            <button
+              onClick={() => {
+                setSelectedCategory('all');
+                setSelectedStatus('all');
+                setSearchQuery('');
+              }}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xs uppercase tracking-wider hover:scale-105 transition-all shadow"
+            >
+              Limpar Filtros
+            </button>
           </div>
+        ) : (
+          /* Grid vs List layout */
+          <div className="mt-8">
+            {viewMode === 'grid' ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredProjects.map((project) => (
+                  <ProjectCard3D
+                    key={project.id}
+                    project={project}
+                    onSelect={(proj) => setSelectedProject(proj)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-6">
+                {filteredProjects.map((project) => (
+                  <ProjectListCard
+                    key={project.id}
+                    project={project}
+                    onSelect={(proj) => setSelectedProject(proj)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Feature section prompt */}
+        <div className="mt-24 p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+          <div className="space-y-2 text-center md:text-left">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-700 text-xs font-bold border border-cyan-200 mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" /> Contratação & Parcerias
+            </div>
+            <h3 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Precisa de um projeto exclusivo ou evoluir sua plataforma?
+            </h3>
+            <p className="text-slate-600 text-sm max-w-xl leading-relaxed font-light">
+              Estou disponível para novas oportunidades, suporte a aplicações Vue.js/React e desenvolvimento de portfólios de alta conversão.
+            </p>
+          </div>
+
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="w-full md:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 active:scale-95 transition-all flex-shrink-0"
+          >
+            Agendar Reunião ou Orçamento
+          </button>
         </div>
 
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
+      </main>
 
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-      </div>
-      <div className="grid gap-4 mt-16">
-        
-        <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src={Fix} alt="" />
-          <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="text-center">
-              <h3>DevFlix</h3>
-              <div className="flex flex-col items-center m-8">
-                <p>Em Desenvolvimento</p>
-                <Image src={logo} alt="" className="w-6 h-6" />
-                <h6>Vue.js</h6>
-              </div>
-              <a
-                href='https://developer-flix.vercel.app/'
-                target='_blank'
-                rel='noreferrer'
-              >
-              <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                Visitar
-                </button>
-                </a>
-            </div>
-          </div>
-        </div>     
+      {/* Footer */}
+      <Footer />
 
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-      </div>
-      <div className="grid gap-4 mt-16">
-        
-        <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src={Port} alt="" />
-          <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="text-center">
-              <h3>Loteria</h3>
-              <div className="flex flex-col items-center m-8">
-                <p>Em Desenvolvimento</p>
-                <Image src={logo} alt="" className="w-6 h-6" />
-                <h6>Vue.js</h6>
-              </div>
-              <a
-                href='https://andersonportifolio.netlify.app'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                  Visitar
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-      </div>
-      <div className="grid gap-4 mt-16">
-        
-        <div className="relative group ">
-          <Image className="h-auto  rounded-lg h-full" src={loteria} alt="" />
-          <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="text-center">
-              <h3>Loteria</h3>
-              <div className="flex flex-col items-center m-8">
-                <p>Em Desenvolvimento</p>
-                <Image src={logo} alt="" className="w-6 h-6" />
-                <h6>Vue.js</h6>
-              </div>
-              <a
-                href='https://jade-pithivier-081acd.netlify.app'
-                target='_blank'
-                rel='noreferrer'
-              >
-              <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                Visitar
-                </button>
-                </a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        
-        <div className="relative group">
-          {/* <Image className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" /> */}
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        <div className="relative group ">
-          <Image className=" rounded-lg h-full" src={rio} alt="" />
-          <div className="absolute inset-0  h-auto bg-black bg-opacity-60 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="text-center">
-              <h3>Loja</h3>
-              <div className="flex flex-col items-center m-8">
-                <p></p>
-                <Image src={logo} alt="" className="w-6 h-6" />
-                <h6>Vue.js</h6>
-              </div>
-              <a
-                href='https://www.riopiscinascacoal.com/'
-                target='_blank'
-                rel='noreferrer'
-              >
-              <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                Visitar
-                </button>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Project Details Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+
+      {/* Contact Inquiry Modal */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
+
     </div>
   );
 };
 
-export default Projects;
+export default App;

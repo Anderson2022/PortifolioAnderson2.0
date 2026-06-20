@@ -23,6 +23,7 @@
     "gh-pages": "^4.0.0",
     "i18next": "^17.0.12",
     "i18next-browser-languagedetector": "^3.0.3",
+    "lucide-react": "^1.21.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -39,6 +40,7 @@
     "module": "CommonJS",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24",
-    "target": "ES6"
+    "target": "ES6",
+    "typescript": "^6.0.3"
   }
 }
