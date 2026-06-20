@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 <Code2 className="w-6 h-6" />
               </div>
               <span className="font-extrabold text-2xl tracking-tight text-white">
-                Dev<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Space</span>
+                Anderson<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Fernandes</span>
               </span>
             </div>
             <p className="text-gray-400 text-sm max-w-md leading-relaxed font-light">

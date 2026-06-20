@@ -59,7 +59,7 @@ const Navbar = () => {
     >
       <div className='flex justify-between  items-center w-full h-full px-10 2xl:px-16 relative'> {/* Adicionado "relative" aqui */}
         <Link href='/'>
-          <p className="text-4xl font-black text-gray-900 dark:text-white cursor-pointer">Anderson</p>
+          <p className="inline-block text-4xl font-black text-black cursor-pointer neumorph px-5 py-3">Anderson</p>
         </Link>
         <div className="flex justify-center items-center w-full">
           {/* Renderiza o select apenas no cliente para evitar o mismatch */}

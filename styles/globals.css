@@ -110,6 +110,23 @@ html {
   color: #111827;
 }
 
+.neumorph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ecf0f3;
+  color: #111827;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.12), -8px -8px 18px rgba(255, 255, 255, 0.9);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.neumorph:hover {
+  box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.08), inset -4px -4px 12px rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
 #chart-container {
   position: relative;
   height: 100vh;
@@ -156,6 +173,50 @@ html {
   opacity: 1;
   filter: blur(12px);
   animation: blob-bounce 5s infinite ease;
+}
+
+.bg-animation-spot {
+  animation: bg-spot-move 32s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.bg-animation-spot-1 {
+  animation-duration: 28s;
+}
+
+.bg-animation-spot-2 {
+  animation-duration: 34s;
+}
+
+.bg-animation-spot-3 {
+  animation-duration: 30s;
+}
+
+.bg-animation-spot-4 {
+  animation-duration: 38s;
+}
+
+.bg-animation-spot-5 {
+  animation-duration: 36s;
+}
+
+@keyframes bg-spot-move {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translate(-40%, -60%) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-55%, -40%) scale(0.95);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translate(-50%, -55%) scale(1.05);
+    opacity: 0.8;
+  }
 }
 
 @keyframes blob-bounce {

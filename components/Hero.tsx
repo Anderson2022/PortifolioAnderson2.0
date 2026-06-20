@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
               Experiências Digitais em <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 drop-shadow-sm">
-                Perspectiva 3D & Alto Nível
+                Perspectiva de Alto Nível
               </span>
             </h1>
 
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
                 <Rocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                <span>Explorar Projetos em 3D</span>
+                <span>Explorar Projetos</span>
               </button>
 
               <a
@@ -102,7 +102,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-white mb-4 shadow-lg shadow-emerald-500/30">
                     <Box className="w-8 h-8 animate-spin" style={{ animationDuration: '12s' }} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-1">Arte Decoração 3D</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">Arte Decoração</h3>
                   <p className="text-xs text-gray-300 leading-relaxed mb-4">
                     Tapeçaria e Decoração Artística com visual totalmente reformulado.
                   </p>
