@@ -4,7 +4,7 @@ import { db } from '../../../libs/firebase';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ message: 'Método não permitido' });
 
-  const { action, sessionId, visitorId, page, referrer, startedAt } = req.body || {};
+  const { action, sessionId, visitorId, page, referrer, landingUrl, utmSource, utmMedium, utmCampaign, startedAt } = req.body || {};
   if (!sessionId || !visitorId || !page) return res.status(400).json({ message: 'Evento inválido' });
 
   const now = Date.now();
@@ -21,6 +21,11 @@ export default async function handler(req, res) {
     country: String(country).slice(0, 80),
     city: String(city).slice(0, 120),
     source: String(source).slice(0, 160),
+    referrerUrl: String(referrer || '').slice(0, 500),
+    landingUrl: String(landingUrl || '').slice(0, 500),
+    utmSource: String(utmSource || '').slice(0, 120),
+    utmMedium: String(utmMedium || '').slice(0, 120),
+    utmCampaign: String(utmCampaign || '').slice(0, 160),
     lastPage: String(page).slice(0, 240),
     lastSeenAt: serverTimestamp(),
     durationSec,

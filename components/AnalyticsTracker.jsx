@@ -19,7 +19,17 @@ export default function AnalyticsTracker() {
     sessionRef.current = { visitorId, sessionId, startedAt: Date.now() };
 
     const send = (action, page = window.location.pathname) => {
-      const payload = JSON.stringify({ action, page, referrer: document.referrer, ...sessionRef.current });
+      const query = new URLSearchParams(window.location.search);
+      const payload = JSON.stringify({
+        action,
+        page,
+        referrer: document.referrer,
+        landingUrl: window.location.href,
+        utmSource: query.get('utm_source') || '',
+        utmMedium: query.get('utm_medium') || '',
+        utmCampaign: query.get('utm_campaign') || '',
+        ...sessionRef.current,
+      });
       if (action === 'end' && navigator.sendBeacon) {
         navigator.sendBeacon('/api/analytics/event', new Blob([payload], { type: 'application/json' }));
       } else {
