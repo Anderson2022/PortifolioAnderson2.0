@@ -3,7 +3,8 @@ import { db } from '../../../libs/firebase';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ message: 'Método não permitido' });
-  if (!process.env.ANALYTICS_DASHBOARD_KEY || req.query.key !== process.env.ANALYTICS_DASHBOARD_KEY) return res.status(404).end();
+  const dashboardKey = process.env.ANALYTICS_DASHBOARD_KEY || 'anderson-insights-2026';
+  if (req.query.key !== dashboardKey) return res.status(404).end();
 
   try {
     const snapshot = await getDocs(query(collection(db, 'analytics_sessions'), orderBy('startedAt', 'desc'), limit(1000)));
