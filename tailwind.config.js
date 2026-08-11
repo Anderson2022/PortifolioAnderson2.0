@@ -3,11 +3,23 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './pages/Front/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    "./src/**/*.{html,js}",
+    './src/**/*.{html,js,ts,jsx,tsx}',
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
     extend: {
+      colors: {
+        base: '#e8e4df', surface: '#f0ece7', raised: '#f5f1ec',
+        deep: '#ddd8d2', deepest: '#d2cdc6', teal: '#17191f',
+        tealdark: '#050506', mint: '#484d58', coral: '#df5f52',
+        amber: '#d88d22', sky: '#347fc0', plum: '#7656b5',
+        ink: '#2d3040', muted: '#7a7e8f', faint: '#a5a8b6',
+      },
+      fontFamily: {
+        display: ['Space Grotesk', 'IBM Plex Sans', 'sans-serif'],
+        body: ['IBM Plex Sans', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
       transitionProperty: {
         'max-height': 'max-height',
       },

@@ -1,9 +1,9 @@
 import React from 'react';
-import propertyImg from '../public/assets/projects/property.jpg';
-import cryptoImg from '../public/assets/projects/crypto.jpg'
-import netflixImg from '../public/assets/projects/netflix.jpg'
-import twitchImg from '../public/assets/projects/twitch.jpg'
-import rio from '../public/assets/projects/riopiscinas.png'
+const propertyImg = { src: '/assets/projects/property.jpg', width: 2000, height: 1391 };
+const cryptoImg = { src: '/assets/projects/crypto.jpg', width: 2000, height: 1392 };
+const netflixImg = { src: '/assets/projects/netflix.jpg', width: 2000, height: 1390 };
+const twitchImg = { src: '/assets/projects/twitch.jpg', width: 2000, height: 1384 };
+const rio = { src: '/assets/projects/riopiscinas.png', width: 1330, height: 603 };
 import ProjectItem from './ProjectItem';
 import { i18n } from '../translate/i18n';
 

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import ContactImg from '../public/assets/contact.jpg';
+const ContactImg = { src: '/assets/contact.jpg', width: 640, height: 427 };
 import { i18n } from '../translate/i18n'
 import Image from 'next/image'
 
@@ -37,7 +37,7 @@ const Contact = () => {
                 </p> */}
               </div>
               <div>
-                <p className='uppercase pt-8'> <p> {i18n.t('textContact')}</p></p>
+                <p className='uppercase pt-8'>{i18n.t('textContact')}</p>
                 <div className='flex items-center justify-between py-4'>
                   <Link href='https://www.linkedin.com/in/anderson-silva-346255160/'>
                     <a

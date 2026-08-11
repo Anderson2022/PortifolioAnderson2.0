@@ -1,14 +1,28 @@
 import '../styles/globals.css';
+import '../src/index.css';
 import Navbar from '../components/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const [, refreshLanguage] = useState(0);
+  const usesDataPortfolioShell = router.pathname === '/data-engineering'
+    || router.pathname === '/private-insights'
+    || router.pathname === '/data-engineering/private-insights';
+
+  useEffect(() => {
+    const refresh = () => refreshLanguage((value) => value + 1);
+    window.addEventListener('portfolio-language-change', refresh);
+    return () => window.removeEventListener('portfolio-language-change', refresh);
+  }, []);
 
   return (
     <>
-      <Navbar />
+      <AnalyticsTracker />
+      {!usesDataPortfolioShell && <Navbar />}
       <AnimatePresence mode="wait">
         <motion.div
           key={router.asPath}

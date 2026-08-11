@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { PROJECTS_DATA } from '../data/projects';
-import Header from '../components/Header';
 import Hero from '../components/Hero';
 import FilterBar from '../components/FilterBar';
 import ProjectCard3D from '../components/ProjectCard3D';
@@ -9,6 +8,7 @@ import ProjectModal from '../components/ProjectModal';
 import ContactModal from '../components/ContactModal';
 import Footer from '../components/Footer';
 import { Sparkles, FileQuestion } from 'lucide-react';
+import AmbientCanvas from '../src/components/AmbientCanvas';
 
 const App = () => {
   // State for Filtering & Views
@@ -59,25 +59,15 @@ const App = () => {
     }
   };
 
-  // Count active projects for Header
-  const activeCount = useMemo(() => {
-    return PROJECTS_DATA.filter(p => p.status === 'active').length;
-  }, []);
-
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-cyan-500 selection:text-white">
-      
-      {/* Top sticky header */}
-      <Header 
-        onOpenContact={() => setIsContactOpen(true)} 
-        projectCount={activeCount} 
-      />
+    <div className="projects-page relative min-h-screen flex flex-col bg-base font-body text-ink selection:bg-ink/20 selection:text-ink pt-20">
+      <AmbientCanvas />
 
       {/* Hero Presentation */}
-      <Hero onExploreClick={handleExploreClick} />
+      <div className="relative z-10"><Hero onExploreClick={handleExploreClick} /></div>
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         
         {/* Filter Toolbar */}
         <FilterBar
@@ -144,7 +134,7 @@ const App = () => {
         )}
 
         {/* Feature section prompt */}
-        <div className="mt-24 p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+        {/* <div className="mt-24 p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-700 text-xs font-bold border border-cyan-200 mb-2">
               <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" /> Contratação & Parcerias
@@ -163,7 +153,7 @@ const App = () => {
           >
             Agendar Reunião ou Orçamento
           </button>
-        </div>
+        </div> */}
 
       </main>
 

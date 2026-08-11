@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import profilePic from '../public/assets/projects/transamerica.jpg';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const skills = [
   { name: 'Hardware', value: 4 },
@@ -75,25 +73,32 @@ const interests = [
 
 export default function Resume() {
   const [openExp, setOpenExp] = useState(null);
+  const timelineRef = useRef(null);
+
+  const moveTimeline = (direction) => {
+    const carousel = timelineRef.current;
+    if (!carousel) return;
+    carousel.scrollBy({ left: direction * Math.min(carousel.clientWidth * 0.85, 360), behavior: 'smooth' });
+  };
 
   return (
-    <div className="min-h-screen #ECF0F3 flex flex-col items-center justify-center py-24 px-2">
+    <div className="resume-page min-h-screen bg-base flex flex-col items-center justify-start px-4 pb-12 pt-28 sm:px-6 sm:pb-16 lg:px-10 lg:pt-32">
       <Head>
         <title>Anderson | Resume</title>
       </Head>
-      <div className="max-w-6xl w-full bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden">
+      <div className="neu w-full max-w-6xl overflow-hidden rounded-2xl">
         {/* Lado Esquerdo */}
-        <div className="md:w-2/3 p-8 flex flex-col gap-6 text-gray-900">
-          <motion.h1 initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-extrabold tracking-[0.5em] text-gray-900 mb-2 text-center">ANDERSON<br />FERNANDES</motion.h1>
-          <div className="flex flex-col md:flex-row gap-8 mt-4">
+        <div className="flex w-full flex-col gap-6 p-5 text-ink sm:p-8 lg:p-12">
+          <motion.h1 initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-2 break-words text-center font-display text-3xl font-extrabold leading-tight tracking-[0.16em] text-ink sm:text-5xl sm:tracking-[0.28em] lg:text-6xl">ANDERSON<br />FERNANDES</motion.h1>
+          <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
             {/* Informações Pessoais */}
             <div className="flex-1">
               <h2 className="font-bold text-lg mb-2 tracking-widest">INFORMAÇÕES</h2>
-              <div className="text-sm leading-6">
+              <div className="text-sm leading-7 text-muted">
                 <p><b>IDADE:</b> 32</p>
                 <p><b>CIDADE:</b> Cuiabá</p>
                 <p><b>TELEFONE:</b> (65) 99280-3826</p>
-                <p><b>EMAIL:</b> andersonsfernandes@hotmail.com</p>
+                <p className="break-all"><b>EMAIL:</b> andersonsfernandes@hotmail.com</p>
               </div>
               <h2 className="font-bold text-lg mt-6 mb-2 tracking-widest">SOBRE MIM</h2>
               <div className="text-xs text-gray-700">
@@ -101,9 +106,9 @@ export default function Resume() {
               </div>
             </div>
             {/* Interesses e Círculos */}
-            <div className="flex-1 flex flex-col gap-4 items-center">
+            <div className="flex flex-1 flex-col gap-4 md:items-center">
               <h2 className="font-bold text-lg mb-2 tracking-widest">INTERESSES</h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid w-full grid-cols-2 gap-3 sm:gap-4">
                 {interests.map((i, idx) => (
                   <motion.div
                     key={i}
@@ -111,7 +116,7 @@ export default function Resume() {
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 + idx * 0.15 }}
                     whileHover={{ scale: 1.15, rotate: 8, backgroundColor: '#facc15', color: '#222' }}
-                    className="flex flex-col items-center cursor-pointer bg-white/10 rounded-xl p-3 shadow-lg border border-yellow-400 hover:shadow-yellow-400 transition"
+                    className="neu-sm flex min-w-0 cursor-pointer flex-col items-center p-3 transition"
                   >
                     <motion.svg width="48" height="48" initial={{ rotate: 0 }} whileHover={{ rotate: 10 }}>
                       <circle cx="24" cy="24" r="20" stroke="#e5e7eb" strokeWidth="6" fill="none" />
@@ -127,7 +132,7 @@ export default function Resume() {
                         transition={{ duration: 0.7, delay: 0.3 + idx * 0.1 }}
                       />
                     </motion.svg>
-                    <span className="text-xs font-bold mt-1 uppercase">{i}</span>
+                    <span className="mt-1 max-w-full break-words text-center text-[10px] font-bold uppercase sm:text-xs">{i}</span>
                   </motion.div>
                 ))}
               </div>
@@ -136,7 +141,7 @@ export default function Resume() {
           {/* Skills Profissionais */}
           <div className="mt-6">
             <h2 className="font-bold text-lg mb-2 tracking-widest">PROFESSIONAL SKILLS</h2>
-            <div className="flex gap-6">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-6">
               {skills.map((skill, idx) => (
                 <motion.div
                   key={skill.name}
@@ -144,7 +149,7 @@ export default function Resume() {
                   animate={{ scale: 1, opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   whileHover={{ scale: 1.2, backgroundColor: '#facc15', color: '#222' }}
-                  className="flex flex-col items-center bg-white/10 rounded-xl p-2 shadow border border-yellow-400 hover:shadow-yellow-400 transition"
+                  className="neu-sm flex min-w-0 flex-col items-center p-3 transition"
                 >
                   <motion.svg width="40" height="40" initial={{ rotate: 0 }} whileHover={{ rotate: 12 }}>
                     <circle cx="20" cy="20" r="16" stroke="#e5e7eb" strokeWidth="6" fill="none" />
@@ -167,8 +172,21 @@ export default function Resume() {
           </div>
           {/* Timeline */}
           <div className="mt-8">
-            <h2 className="font-bold text-lg mb-2 tracking-widest">TIMELINE</h2>
-            <div className="flex items-center gap-4">
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <div>
+                <h2 className="font-bold text-lg tracking-widest">TIMELINE</h2>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-faint">Deslize ou use as setas</p>
+              </div>
+              <div className="flex gap-2">
+                <button type="button" onClick={() => moveTimeline(-1)} aria-label="Voltar na timeline" className="neu-btn flex h-10 w-10 items-center justify-center text-muted hover:text-ink">
+                  <ChevronLeft size={18} />
+                </button>
+                <button type="button" onClick={() => moveTimeline(1)} aria-label="Avançar na timeline" className="neu-btn flex h-10 w-10 items-center justify-center text-muted hover:text-ink">
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+            <div ref={timelineRef} className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-5 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {timeline.map((item, idx) => (
                 <motion.div
                   key={item.year}
@@ -176,12 +194,12 @@ export default function Resume() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   whileHover={{ scale: 1.1, backgroundColor: '#facc15', color: '#222' }}
-                  className="flex flex-col items-center bg-white/10 rounded-xl p-2 border border-yellow-400 hover:shadow-yellow-400 transition"
+                  className="neu-sm flex min-h-[150px] min-w-[82%] snap-start flex-col items-center justify-center p-4 transition sm:min-w-[46%] lg:min-w-[31%] xl:min-w-[23%]"
                 >
                   <div className="w-3 h-3 rounded-full bg-yellow-400 mb-1" />
                   <span className="text-xs font-bold">{item.year}</span>
-                  <span className="text-[10px] text-gray-800 text-center w-20">{item.desc}</span>
-                  {idx < timeline.length - 1 && <div className="w-16 h-1 bg-yellow-400 mt-1 mb-1" />}
+                  <span className="mt-1 w-full text-center text-[10px] leading-relaxed text-muted">{item.desc}</span>
+                  <div className="mt-3 h-1 w-12 rounded-full bg-amber" />
                 </motion.div>
               ))}
             </div>
@@ -193,13 +211,13 @@ export default function Resume() {
               {experiences.map((exp, idx) => (
                 <motion.div key={exp.year} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 + idx * 0.2 }}>
                   <motion.button
-                    className="w-full bg-white/10 rounded-lg shadow p-3 border-l-4 border-yellow-400 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition hover:bg-yellow-50 hover:text-black hover:font-bold"
+                    className="neu-sm flex w-full flex-col items-start gap-1 border-l-4 border-amber p-3 text-left transition focus:outline-none focus:ring-2 focus:ring-amber sm:flex-row sm:items-center sm:gap-2"
                     onClick={() => setOpenExp(openExp === idx ? null : idx)}
                     whileHover={{ scale: 1.05, backgroundColor: '#facc15', color: '#222' }}
                   >
                     <span className="text-yellow-400 font-bold text-lg">{exp.year}</span>
-                    <span className="font-bold text-gray-900">{exp.title}</span>
-                    <span className="text-gray-700">@ {exp.company}</span>
+                    <span className="font-bold text-ink">{exp.title}</span>
+                    <span className="break-words text-muted">@ {exp.company}</span>
                   </motion.button>
                   {openExp === idx && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.3 }} className="overflow-hidden px-4 py-2 bg-white/20 border-l-4 border-yellow-200 rounded-b-lg text-xs text-gray-900">
