@@ -2,6 +2,18 @@ import { Project, TechStackItem } from '../types';
 
 export const projectsData: Project[] = [
   {
+    id: 9,
+    nome: 'Meu Gestor — Back-end',
+    descricao: 'API do Meu Gestor responsável pelas regras de negócio, persistência dos dados e integração segura com o painel web.',
+    githubLink: 'https://github.com/Anderson2022',
+    imagem: '/assets/projects/api.png',
+    imagensArte: [
+      '/assets/projects/node.png',
+      '/assets/projects/database-sql.svg'
+    ],
+    techs: ['Node.js', 'API REST', 'TypeScript', 'Banco de dados']
+  },
+  {
     id: 1,
     nome: 'Roleplay-API',
     descricao: 'API completa para gerenciar mesas de RPG. Autenticação, sessões em tempo real, inventários e combat system usando TypeScript + AdonisJS + Japa tests.',
@@ -91,6 +103,8 @@ export const projectsData: Project[] = [
 ];
 
 export const techStackData: TechStackItem[] = [
+  { name: 'Java', icon: '', color: 'from-orange-500 to-red-600' },
+  { name: 'Spring Boot', icon: '', color: 'from-green-500 to-emerald-600' },
   { name: 'TypeScript', icon: '🟦', color: 'from-blue-500 to-cyan-400' },
   { name: 'Node.js', icon: '⚡', color: 'from-green-500 to-emerald-400' },
   { name: 'NestJS', icon: '🐦', color: 'from-red-500 to-rose-500' },

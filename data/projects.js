@@ -1,5 +1,27 @@
 export const PROJECTS_DATA = [
   {
+    id: 'meu-gestor-frontend',
+    title: 'Meu Gestor — Front-end',
+    subtitle: 'Painel de Gestão Web',
+    description: 'Interface do Meu Gestor para centralizar informações, acompanhar resultados e simplificar as rotinas de gestão.',
+    longDescription: 'O front-end do Meu Gestor transforma os dados da aplicação em uma experiência clara e responsiva. O painel organiza os principais indicadores e operações do sistema para agilizar o trabalho diário em computadores, tablets e celulares.',
+    category: 'react',
+    tech: ['React', 'JavaScript', 'CSS3', 'Responsive Design'],
+    mainTechIcon: 'React',
+    image: '/assets/projects/meu-gestor-dashboard.png',
+    status: 'development',
+    url: 'https://meu-gestor-de-finan-a.vercel.app/',
+    githubUrl: 'https://github.com/Anderson2022',
+    features: [
+      'Dashboard responsivo e de fácil navegação',
+      'Visualização centralizada das informações',
+      'Fluxos rápidos para as tarefas do dia a dia',
+      'Integração com a API do Meu Gestor'
+    ],
+    featured: true,
+    color: '#5651e5'
+  },
+  {
     id: 'arte-decor',
     title: 'Arte Decoração',
     subtitle: 'Catálogo & Requinte em Tapeçaria',
@@ -168,15 +190,15 @@ export const PROJECTS_DATA = [
 ];
 
 export const TECH_CATEGORIES = [
-  { id: 'all', label: 'Todos os Projetos', count: 8 },
+  { id: 'all', label: 'Todos os Projetos', count: 9 },
   { id: 'vue', label: 'Vue.js', count: 5 },
-  { id: 'react', label: 'React', count: 1 },
+  { id: 'react', label: 'React', count: 2 },
   { id: 'typescript', label: 'TypeScript', count: 1 },
   { id: 'node', label: 'Node.js / Fullstack', count: 1 },
 ];
 
 export const STATS_DATA = [
-  { label: 'Projetos Totais', value: '8', icon: 'FolderGit2', color: 'from-blue-500 to-cyan-400' },
+  { label: 'Projetos Totais', value: '9', icon: 'FolderGit2', color: 'from-blue-500 to-cyan-400' },
   { label: 'Tecnologias Foco', value: 'Vue & React', icon: 'Code2', color: 'from-emerald-400 to-teal-500' },
   { label: 'Em Produção', value: '5 Ativos', icon: 'Globe2', color: 'from-purple-500 to-indigo-500' },
   { label: 'Aceleração 3D', value: '100%', icon: 'Box', color: 'from-pink-500 to-rose-500' },
