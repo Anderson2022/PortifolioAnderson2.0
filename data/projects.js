@@ -114,7 +114,7 @@ export const PROJECTS_DATA = [
     mainTechIcon: 'Vue.js',
     image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1200&auto=format&fit=crop',
     status: 'active',
-    url: 'https://www.riopiscinascacoal.com/',
+    url: 'https://casa-das-piscinas-git-main-anderson2022s-projects.vercel.app',
     features: [
       'Catálogo interativo com modelos 3D das piscinas',
       'Calculadora de volume de água e dicas de tratamento',
