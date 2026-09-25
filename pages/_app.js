@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -24 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="min-h-screen"
+          className="app-unified-shell min-h-screen"
         >
           <Component {...pageProps} />
         </motion.div>

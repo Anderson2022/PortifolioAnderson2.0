@@ -26,6 +26,17 @@ const BARS = [
   { h: 28, fill: "#df5f52" },
 ];
 
+function Screws({ x, y, width, height, inset = 7 }: { x: number; y: number; width: number; height: number; inset?: number }) {
+  const points = [
+    [x + inset, y + inset],
+    [x + width - inset, y + inset],
+    [x + inset, y + height - inset],
+    [x + width - inset, y + height - inset],
+  ];
+
+  return <g aria-hidden>{points.map(([cx, cy], index) => <g key={index}><circle cx={cx} cy={cy} r={2.6} fill="#59645f"/><circle cx={cx - .6} cy={cy - .6} r={.65} fill="#b8c1bc"/></g>)}</g>;
+}
+
 function HeroSchematic() {
   return (
     <svg viewBox="0 0 560 640" className="w-full" role="img" aria-label="Esquemático de infraestrutura de dados">
@@ -45,6 +56,7 @@ function HeroSchematic() {
         <g key={s.label}>
           <rect x={s.x} y={36} width={104} height={48} rx={12} fill="#e8e4df"
             style={{ filter: "drop-shadow(3px 3px 6px rgba(0,0,0,0.07)) drop-shadow(-3px -3px 6px rgba(255,255,255,0.6))" }} />
+          <Screws x={s.x} y={36} width={104} height={48}/>
           <text x={s.x + 52} y={57} textAnchor="middle" fontFamily={MONO} fontSize={11} letterSpacing={2} fill="#2d3040">{s.label}</text>
           <text x={s.x + 52} y={72} textAnchor="middle" fontFamily={MONO} fontSize={7} letterSpacing={1.5} fill="#a5a8b6">{s.sub}</text>
         </g>
@@ -66,6 +78,7 @@ function HeroSchematic() {
       {/* pipeline core */}
       <rect x={190} y={200} width={180} height={70} rx={14} fill="#e8e4df"
         style={{ filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.07)) drop-shadow(-4px -4px 8px rgba(255,255,255,0.6))" }} />
+      <Screws x={190} y={200} width={180} height={70} inset={9}/>
       <text x={280} y={227} textAnchor="middle" fontFamily={MONO} fontSize={12} letterSpacing={5} fill="#17191f">PIPELINE</text>
       <line x1={206} y1={242} x2={354} y2={242} stroke="#d2cdc6" strokeWidth={1} />
       <text x={280} y={258} textAnchor="middle" fontFamily={MONO} fontSize={7} letterSpacing={2} fill="#a5a8b6">ingest · clean · load</text>
@@ -78,6 +91,7 @@ function HeroSchematic() {
 
       <rect x={205} y={330} width={150} height={54} rx={14} fill="#e8e4df"
         style={{ filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.07)) drop-shadow(-4px -4px 8px rgba(255,255,255,0.6))" }} />
+      <Screws x={205} y={330} width={150} height={54} inset={8}/>
       <text x={280} y={353} textAnchor="middle" fontFamily={MONO} fontSize={10} letterSpacing={2.5} fill="#a48bcf">TRANSFORMATION</text>
       <text x={280} y={370} textAnchor="middle" fontFamily={MONO} fontSize={7} letterSpacing={2} fill="#a5a8b6">sql · joins · types</text>
 
@@ -93,6 +107,8 @@ function HeroSchematic() {
           style={{ filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.07)) drop-shadow(-4px -4px 8px rgba(255,255,255,0.6))" }} />
         <ellipse cx={280} cy={498} rx={70} ry={12} fill="#ddd8d2" />
         <ellipse cx={280} cy={436} rx={70} ry={12} fill="#e8e4df" stroke="#d2cdc6" />
+        <path d="M210 432 H202 V445 H210 M350 432 H358 V445 H350" fill="none" stroke="#59645f" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx={202} cy={438.5} r={2.8} fill="#87918c"/><circle cx={358} cy={438.5} r={2.8} fill="#87918c"/>
         <text x={280} y={468} textAnchor="middle" fontFamily={MONO} fontSize={10} letterSpacing={2} fill="#17191f">DATA WAREHOUSE</text>
         <text x={280} y={484} textAnchor="middle" fontFamily={MONO} fontSize={7} letterSpacing={1.5} fill="#a5a8b6">fact_sales · dim_*</text>
       </g>
@@ -106,6 +122,7 @@ function HeroSchematic() {
       {/* analytics */}
       <rect x={160} y={556} width={240} height={64} rx={14} fill="#e8e4df"
         style={{ filter: "drop-shadow(4px 4px 8px rgba(0,0,0,0.07)) drop-shadow(-4px -4px 8px rgba(255,255,255,0.6))" }} />
+      <Screws x={160} y={556} width={240} height={64} inset={9}/>
       {BARS.map((b, i) => (
         <rect key={i} x={182 + i * 18} y={608 - b.h} width={10} height={b.h} rx={3} fill={b.fill} opacity={0.85} className="bar-anim" style={{ animationDelay: `${i * 0.22}s` }} />
       ))}
@@ -163,9 +180,6 @@ export default function Hero() {
           <button onClick={() => goTo("projetos")} className="neu-teal group inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold">
             Explorar meus projetos
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </button>
-          <button onClick={() => goTo("jornada")} className="neu-btn inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-medium text-muted transition-colors hover:text-teal">
-            Conhecer minha jornada
           </button>
         </motion.div>
 

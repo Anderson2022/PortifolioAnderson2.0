@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
@@ -7,20 +8,19 @@ import { i18n } from '../translate/i18n';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/#home', tag: 'START', step: '01' },
-  { label: 'Sobre', href: '/#about', tag: 'PROFILE', step: '02' },
-  { label: 'Skills', href: '/#skills', tag: 'STACK', step: '03' },
-  { label: 'Hobby', href: '/#hobby', tag: 'CREATIVE', step: '04' },
-  { label: 'Projetos', href: '/#projects', tag: 'WORK', step: '05' },
+  { label: 'Sobre', href: '/about', tag: 'PROFILE', step: '02' },
+  { label: 'Tech & Criatividade', href: '/skills', tag: 'STACK & CREATIVE', step: '03' },
+  { label: 'Projetos', href: '/projects', tag: 'FRONT-END', step: '05' },
   { label: 'Currículo', href: '/resume', tag: 'RESUME', step: '06' },
-  { label: 'Front-end', href: '/projects', tag: 'INTERFACES', step: '07' },
-  { label: 'Back-end', href: '/projectsBack', tag: 'SERVICES', step: '08' },
-  { label: 'Dados', href: '/data-engineering', tag: 'PIPELINE', step: '09' },
-  { label: 'Contato', href: '/#contact', tag: 'CONNECT', step: '10' },
+  { label: 'Back-end', href: '/projectsBack', tag: 'SERVICES', step: '07' },
+  { label: 'Dados', href: '/data-engineering', tag: 'PIPELINE', step: '08' },
+  { label: 'Contato', href: '/contact', tag: 'CONNECT', step: '09' },
 ];
 
 const I18N_STORAGE_KEY = 'i18nextLng';
 
 export default function Navbar() {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState();
 
@@ -54,6 +54,12 @@ export default function Navbar() {
     window.dispatchEvent(new Event('portfolio-language-change'));
   };
 
+  const isActive = (href) => {
+    if (href === '/#home') return router.pathname === '/' && (!router.asPath.includes('#') || router.asPath === '/#home');
+    if (href.startsWith('/#')) return router.pathname === '/' && router.asPath.endsWith(href.slice(1));
+    return router.pathname === href;
+  };
+
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-40">
@@ -69,7 +75,7 @@ export default function Navbar() {
             <nav className="hidden items-center gap-3 xl:flex">
               {NAV_ITEMS.map((item) => (
                 <Link href={item.href} key={item.href}>
-                  <a className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted transition-colors hover:text-teal">{item.label}</a>
+                  <a className={`portfolio-nav-link font-mono text-[10px] uppercase tracking-[0.14em] transition-colors ${isActive(item.href) ? 'portfolio-nav-link-active' : 'text-muted hover:text-teal'}`}>{item.label}</a>
                 </Link>
               ))}
             </nav>
@@ -106,7 +112,7 @@ export default function Navbar() {
               <div className="mt-5 space-y-2.5">
                 {NAV_ITEMS.map((item) => (
                   <Link href={item.href} key={item.href}>
-                    <a onClick={() => setMenuOpen(false)} className="neu-btn flex w-full items-center justify-between p-3.5 text-left">
+                    <a onClick={() => setMenuOpen(false)} className={`neu-btn portfolio-mobile-link flex w-full items-center justify-between p-3.5 text-left ${isActive(item.href) ? 'portfolio-nav-link-active' : ''}`}>
                       <span className="flex items-center gap-3"><span className="flex h-6 w-6 items-center justify-center rounded-md bg-deep font-mono text-xs font-bold text-muted">{item.step}</span><span><strong className="block font-display text-sm text-ink">{item.label}</strong><small className="font-mono text-[9px] tracking-wider text-faint">{item.tag}</small></span></span>
                     </a>
                   </Link>

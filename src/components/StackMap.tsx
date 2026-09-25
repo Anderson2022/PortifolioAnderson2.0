@@ -63,7 +63,7 @@ export default function StackMap() {
           <div className="relative flex h-40 w-40 items-center justify-center md:h-44 md:w-44">
             <span className="ring-out absolute inset-0 rounded-full border border-teal/30" />
             <span className="ring-out absolute inset-0 rounded-full border border-plum/20" style={{ animationDelay: "1.4s" }} />
-            <div className="neu-circle relative z-10 flex h-full w-full flex-col items-center justify-center gap-1.5">
+            <div className="data-core neu-circle relative z-10 flex h-full w-full flex-col items-center justify-center gap-1.5">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal to-tealdark">
                 <Database size={20} className="text-white" />
               </div>

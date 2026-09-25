@@ -2,6 +2,25 @@ import { Project, TechStackItem } from '../types';
 
 export const projectsData: Project[] = [
   {
+    id: 10,
+    nome: 'Controle de Tarefas — FONTDATA',
+    descricao: 'Sistema web completo para cadastro, gerenciamento e atribuição de tarefas, com autenticação, perfis Supervisor e Operador, dashboard, regras de acesso, testes automatizados e ambiente Docker.',
+    githubLink: 'https://github.com/Anderson2022/Teste-FONTDATA',
+    imagem: '/assets/projects/fontdata-architecture.png',
+    imagensArte: [
+      '/assets/projects/java.png',
+      '/assets/projects/docker.svg',
+      '/assets/projects/database-sql.svg'
+    ],
+    url: [
+      'https://www.java.com/',
+      'https://spring.io/projects/spring-boot',
+      'https://www.postgresql.org/',
+      'https://www.docker.com/'
+    ],
+    techs: ['Java 21', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'Docker', 'Thymeleaf']
+  },
+  {
     id: 9,
     nome: 'Meu Gestor — Back-end',
     descricao: 'API do Meu Gestor responsável pelas regras de negócio, persistência dos dados e integração segura com o painel web.',

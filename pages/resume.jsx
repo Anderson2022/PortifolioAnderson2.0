@@ -1,248 +1,85 @@
-import React, { useRef, useState } from 'react';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const skills = [
-  { name: 'Hardware', value: 4 },
-  { name: 'Software', value: 5 },
-  { name: 'Network', value: 3 },
-  { name: 'Security', value: 2 },
-];
-
-const timeline = [
-  { year: '2009', desc: 'Início dos estudos em tecnologia.' },
-  { year: '2012', desc: 'Primeiros projetos e estágios.' },
-  { year: '2017', desc: 'Atuação profissional em empresas.' },
-  { year: '2020', desc: 'Desenvolvedor Full Stack.' },
-  { year: '2024', desc: 'Desenvolvedor na Rio Piscina e Gerente de Pátio na Irmãos Car.' },
-  { year: '2025', desc: 'Analista de desenvolvimento Java na Sankhya Sistemas.' },
-];
+import Head from 'next/head'
+import Link from 'next/link'
+import { useState } from 'react'
+import { ArrowDownToLine, ArrowUpRight, Award, Briefcase, Code2, Eye, GraduationCap, Mail, MapPin, Phone, Sparkles, X } from 'lucide-react'
 
 const experiences = [
-  {
-    year: '2025',
-    title: 'Analista de Desenvolvimento Java',
-    company: 'Sankhya Sistemas',
-    desc: 'Atuação em desenvolvimento de soluções Java, integrações e suporte a sistemas corporativos.'
-  },
-  {
-    year: '2024',
-    title: 'Desenvolvedor',
-    company: 'Rio Piscina',
-    desc: 'Desenvolvimento de sistemas internos, automação de processos e suporte técnico.'
-  },
-  {
-    year: '2024',
-    title: 'Gerente de Pátio',
-    company: 'Irmãos Car',
-    desc: 'Gestão de equipe, controle de estoque e processos operacionais no pátio.'
-  },
-  {
-    year: '2023',
-    title: 'Desenvolvedor Back-end',
-    company: 'Dom Pixel',
-    desc: 'Trabalhei com APIs para projetos de clientes, como sistemas de pesquisas de personalidade e sistemas de matrículas de cursos.'
-  },
-  {
-    year: '2022',
-    title: 'Analista de Sistemas',
-    company: 'Tacto Sistemas',
-    desc: 'Suporte técnico em Sistema ERP, treinamento de usuários, implantação via SQL Server, configuração de impressoras, conceitos de rede, instalação e manutenção de softwares e hardwares.'
-  },
-  {
-    year: '2021',
-    title: 'Estagiário',
-    company: 'Agion',
-    desc: 'Análise de suporte help desk e reformas de equipamentos.'
-  },
-  {
-    year: '2020',
-    title: 'Office Boy',
-    company: 'Transamerica Serviços',
-    desc: 'Atividades administrativas e apoio operacional.'
-  }
-];
+  ['2025','Analista de Desenvolvimento Java','Sankhya Sistemas','Desenvolvimento de soluções Java, integrações e suporte a sistemas corporativos.'],
+  ['2024','Desenvolvedor','Rio Piscina','Desenvolvimento de sistemas internos, automação de processos e suporte técnico.'],
+  ['2024','Gerente de Pátio','Irmãos Car','Gestão de equipe, controle de estoque e processos operacionais no pátio.'],
+  ['2023','Desenvolvedor Back-end','Dom Pixel','APIs para projetos de clientes, sistemas de pesquisas de personalidade e matrículas de cursos.'],
+  ['2022','Analista de Sistemas','Tacto Sistemas','Suporte em ERP, treinamento, implantação via SQL Server, redes e manutenção de software e hardware.'],
+  ['2021','Estagiário','Agion','Análise de suporte help desk e reformas de equipamentos.'],
+  ['2020','Office Boy','Transamerica Serviços','Atividades administrativas e apoio operacional.'],
+]
 
-const interests = [
-  'Criatividade',
-  'Comunicação',
-  'Trabalho em equipe',
-  'Organização',
-];
+const expertise = ['Java','Node.js','TypeScript','Adonis.js','NestJS','Prisma','SQL Server','Redis','APIs REST','Git & GitHub','Suporte ERP','Automação']
+const qualities = ['Criatividade','Comunicação','Trabalho em equipe','Organização']
 
-export default function Resume() {
-  const [openExp, setOpenExp] = useState(null);
-  const timelineRef = useRef(null);
+const courses = [
+  ['JavaScript e fundamentos da linguagem', 'Alura', 'Concluído', 'https://cursos.alura.com.br/degree/certificate/01bfcaf9-0b4b-400c-9e98-1c3bc7aac2c2?lang=pt_BR'],
+  ['Modelagem de banco de dados', 'Alura', 'Concluído', 'https://cursos.alura.com.br/degree/certificate/84120564-1ce4-4e45-bcb6-85709f3ba913?lang=pt_BR'],
+  ['APIs e desenvolvimento back-end', 'Alura', 'Concluído', 'https://cursos.alura.com.br/degree/certificate/5716d8e9-b820-4b70-bf85-810488d3c959?lang=pt_BR'],
+  ['Formação Java', 'Alura', 'Concluído', 'https://cursos.alura.com.br/degree/certificate/a8a1794c-bd5d-495d-ad4f-c42521bd259b?lang=pt_BR'],
+  ['Node.js', 'Alura', 'Concluído', 'https://cursos.alura.com.br/certificate/40b8fef6-97f2-4715-b409-fbb8eb250d11?lang=pt_BR'],
+  ['WebSockets e comunicação em tempo real', 'Alura', 'Concluído', 'https://cursos.alura.com.br/certificate/4d158869-fc1b-488d-aa79-712ceae64e89?lang=pt_BR'],
+  ['AdonisJS', 'Udemy', 'Concluído', 'https://udemy-certificate.s3.amazonaws.com/image/UC-eed8dd0b-0f0f-4183-a660-4ceac8560979.jpg'],
+]
 
-  const moveTimeline = (direction) => {
-    const carousel = timelineRef.current;
-    if (!carousel) return;
-    carousel.scrollBy({ left: direction * Math.min(carousel.clientWidth * 0.85, 360), behavior: 'smooth' });
-  };
+const dataStudies = [
+  ['Apache Airflow', 'Orquestração de pipelines', 'Projeto e laboratório pessoal'],
+  ['Apache Spark', 'Processamento distribuído', 'Estudo prático em andamento'],
+  ['dbt', 'Transformações e modelagem com SQL', 'Estudo prático em andamento'],
+  ['Apache Kafka', 'Streaming e mensageria de eventos', 'Estudo em andamento'],
+  ['Cloud Data Platforms', 'AWS, GCP e BigQuery', 'Trilha de Engenharia de Dados'],
+]
 
-  return (
-    <div className="resume-page min-h-screen bg-base flex flex-col items-center justify-start px-4 pb-12 pt-28 sm:px-6 sm:pb-16 lg:px-10 lg:pt-32">
-      <Head>
-        <title>Anderson | Resume</title>
-      </Head>
-      <div className="neu w-full max-w-6xl overflow-hidden rounded-2xl">
-        {/* Lado Esquerdo */}
-        <div className="flex w-full flex-col gap-6 p-5 text-ink sm:p-8 lg:p-12">
-          <motion.h1 initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-2 break-words text-center font-display text-3xl font-extrabold leading-tight tracking-[0.16em] text-ink sm:text-5xl sm:tracking-[0.28em] lg:text-6xl">ANDERSON<br />FERNANDES</motion.h1>
-          <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-            {/* Informações Pessoais */}
-            <div className="flex-1">
-              <h2 className="font-bold text-lg mb-2 tracking-widest">INFORMAÇÕES</h2>
-              <div className="text-sm leading-7 text-muted">
-                <p><b>IDADE:</b> 32</p>
-                <p><b>CIDADE:</b> Cuiabá</p>
-                <p><b>TELEFONE:</b> (65) 99280-3826</p>
-                <p className="break-all"><b>EMAIL:</b> andersonsfernandes@hotmail.com</p>
-              </div>
-              <h2 className="font-bold text-lg mt-6 mb-2 tracking-widest">SOBRE MIM</h2>
-              <div className="text-xs text-gray-700">
-                <p>Desenvolvedor de software com experiência em projetos web, APIs, automação e suporte. Apaixonado por tecnologia, sempre buscando inovação e resultados.</p>
-              </div>
-            </div>
-            {/* Interesses e Círculos */}
-            <div className="flex flex-1 flex-col gap-4 md:items-center">
-              <h2 className="font-bold text-lg mb-2 tracking-widest">INTERESSES</h2>
-              <div className="grid w-full grid-cols-2 gap-3 sm:gap-4">
-                {interests.map((i, idx) => (
-                  <motion.div
-                    key={i}
-                    initial={{ scale: 0, opacity: 0, y: 30 }}
-                    animate={{ scale: 1, opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 + idx * 0.15 }}
-                    whileHover={{ scale: 1.15, rotate: 8, backgroundColor: '#facc15', color: '#222' }}
-                    className="neu-sm flex min-w-0 cursor-pointer flex-col items-center p-3 transition"
-                  >
-                    <motion.svg width="48" height="48" initial={{ rotate: 0 }} whileHover={{ rotate: 10 }}>
-                      <circle cx="24" cy="24" r="20" stroke="#e5e7eb" strokeWidth="6" fill="none" />
-                      <motion.circle
-                        cx="24" cy="24" r="20"
-                        stroke="#facc15"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="125.6"
-                        strokeDashoffset="0"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 0.7, delay: 0.3 + idx * 0.1 }}
-                      />
-                    </motion.svg>
-                    <span className="mt-1 max-w-full break-words text-center text-[10px] font-bold uppercase sm:text-xs">{i}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-          {/* Skills Profissionais */}
-          <div className="mt-6">
-            <h2 className="font-bold text-lg mb-2 tracking-widest">PROFESSIONAL SKILLS</h2>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-6">
-              {skills.map((skill, idx) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ scale: 0, opacity: 0, x: -30 }}
-                  animate={{ scale: 1, opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                  whileHover={{ scale: 1.2, backgroundColor: '#facc15', color: '#222' }}
-                  className="neu-sm flex min-w-0 flex-col items-center p-3 transition"
-                >
-                  <motion.svg width="40" height="40" initial={{ rotate: 0 }} whileHover={{ rotate: 12 }}>
-                    <circle cx="20" cy="20" r="16" stroke="#e5e7eb" strokeWidth="6" fill="none" />
-                    <motion.circle
-                      cx="20" cy="20" r="16"
-                      stroke="#111"
-                      strokeWidth="6"
-                      fill="none"
-                      strokeDasharray="100.5"
-                      strokeDashoffset={100.5 - (skill.value / 5) * 100.5}
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.7, delay: 0.3 + idx * 0.1 }}
-                    />
-                  </motion.svg>
-                  <span className="text-xs font-semibold mt-1 uppercase">{skill.name}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          {/* Timeline */}
-          <div className="mt-8">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
-                <h2 className="font-bold text-lg tracking-widest">TIMELINE</h2>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-faint">Deslize ou use as setas</p>
-              </div>
-              <div className="flex gap-2">
-                <button type="button" onClick={() => moveTimeline(-1)} aria-label="Voltar na timeline" className="neu-btn flex h-10 w-10 items-center justify-center text-muted hover:text-ink">
-                  <ChevronLeft size={18} />
-                </button>
-                <button type="button" onClick={() => moveTimeline(1)} aria-label="Avançar na timeline" className="neu-btn flex h-10 w-10 items-center justify-center text-muted hover:text-ink">
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            </div>
-            <div ref={timelineRef} className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-5 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {timeline.map((item, idx) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                  whileHover={{ scale: 1.1, backgroundColor: '#facc15', color: '#222' }}
-                  className="neu-sm flex min-h-[150px] min-w-[82%] snap-start flex-col items-center justify-center p-4 transition sm:min-w-[46%] lg:min-w-[31%] xl:min-w-[23%]"
-                >
-                  <div className="w-3 h-3 rounded-full bg-yellow-400 mb-1" />
-                  <span className="text-xs font-bold">{item.year}</span>
-                  <span className="mt-1 w-full text-center text-[10px] leading-relaxed text-muted">{item.desc}</span>
-                  <div className="mt-3 h-1 w-12 rounded-full bg-amber" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          {/* Experiência */}
-          <div className="mt-8">
-            <h2 className="font-bold text-lg mb-2 tracking-widest">EXPERIÊNCIA</h2>
-            <div className="flex flex-col gap-3">
-              {experiences.map((exp, idx) => (
-                <motion.div key={exp.year} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 + idx * 0.2 }}>
-                  <motion.button
-                    className="neu-sm flex w-full flex-col items-start gap-1 border-l-4 border-amber p-3 text-left transition focus:outline-none focus:ring-2 focus:ring-amber sm:flex-row sm:items-center sm:gap-2"
-                    onClick={() => setOpenExp(openExp === idx ? null : idx)}
-                    whileHover={{ scale: 1.05, backgroundColor: '#facc15', color: '#222' }}
-                  >
-                    <span className="text-yellow-400 font-bold text-lg">{exp.year}</span>
-                    <span className="font-bold text-ink">{exp.title}</span>
-                    <span className="break-words text-muted">@ {exp.company}</span>
-                  </motion.button>
-                  {openExp === idx && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} transition={{ duration: 0.3 }} className="overflow-hidden px-4 py-2 bg-white/20 border-l-4 border-yellow-200 rounded-b-lg text-xs text-gray-900">
-                      {exp.desc}
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* Lado Direito */}
-        {/* <div className="md:w-1/3 bg-yellow-400 flex flex-col items-center justify-between p-8 relative min-h-[600px]">
-          <div className="absolute top-8 right-8 flex gap-4">
-            <a href="#" className="text-black text-2xl font-bold hover:scale-110 transition-transform">Be</a>
-            <a href="#" className="text-black text-2xl font-bold hover:scale-110 transition-transform">G+</a>
-            <a href="#" className="text-black text-2xl font-bold hover:scale-110 transition-transform">in</a>
-          </div>
-          <div className="flex-1 flex flex-col items-center justify-center">
-            <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.7 }} className="relative mt-16">
-              <Image src={profilePic} alt="Foto de perfil" width={180} height={180} className="rounded-lg border-4 border-white shadow-xl object-cover" />
-            </motion.div>
-          </div>
-        </div> */}
+export default function Resume(){
+  const [selectedCourse, setSelectedCourse] = useState(null)
+  return <div className="cv-page">
+    <Head><title>Currículo | Anderson Fernandes</title><meta name="description" content="Currículo profissional de Anderson Fernandes, desenvolvedor de software." /></Head>
+    <main className="cv-shell">
+      <header className="cv-header">
+        <div className="cv-header-main"><p>CURRÍCULO DIGITAL / 2026</p><h1>Anderson<br/><em>Fernandes.</em></h1><span>Desenvolvedor de software com foco em back-end, integrações e sistemas corporativos.</span></div>
+        <div className="cv-header-side"><div className="cv-available"><i/> DISPONÍVEL PARA OPORTUNIDADES</div><div className="cv-resume-actions"><a href="/Anderson_Fernandes.pdf" target="_blank" rel="noreferrer"><Eye size={18}/> Visualizar currículo</a><a href="/Anderson_Fernandes.pdf" download><ArrowDownToLine size={18}/> Baixar currículo em PDF</a></div></div>
+      </header>
+
+      <section className="cv-contact-strip"><span><MapPin/> Cuiabá, MT</span><a href="tel:+5565992803826"><Phone/> (65) 99280-3826</a><a href="mailto:andersonsfernandes@hotmail.com"><Mail/> andersonsfernandes@hotmail.com</a><a href="https://github.com/Anderson2022" target="_blank" rel="noreferrer"><Code2/> github.com/Anderson2022</a></section>
+
+      <div className="cv-layout">
+        <aside className="cv-sidebar">
+          <section><p className="cv-label">01 / PERFIL</p><h2>Sobre mim</h2><p>Desenvolvedor de software com experiência em projetos web, APIs, automação e suporte. Apaixonado por tecnologia, sempre buscando inovação e resultados.</p></section>
+          <section><p className="cv-label">02 / ESPECIALIDADES</p><h2>Ferramentas</h2><div className="cv-tags">{expertise.map(item=><span key={item}>{item}</span>)}</div></section>
+          <section><p className="cv-label">03 / COMPETÊNCIAS</p><h2>Como trabalho</h2><ul>{qualities.map((item,index)=><li key={item}><span>0{index+1}</span>{item}</li>)}</ul></section>
+          <section className="cv-education"><Sparkles/><p>Jornada em tecnologia iniciada em 2009, evoluindo de suporte e infraestrutura para desenvolvimento de software e sistemas corporativos.</p></section>
+        </aside>
+
+        <section className="cv-experience">
+          <header><div><p className="cv-label">04 / TRAJETÓRIA</p><h2>Experiência profissional</h2></div><Briefcase/></header>
+          <div className="cv-timeline">{experiences.map(([year,title,company,description],index)=><article key={`${year}-${company}`}>
+            <div className="cv-year"><span>{year}</span><i/></div>
+            <div className="cv-job"><small>POSIÇÃO {String(experiences.length-index).padStart(2,'0')}</small><h3>{title}</h3><b>{company}</b><p>{description}</p></div>
+          </article>)}</div>
+        </section>
       </div>
-    </div>
-  );
+
+      <section className="cv-academic">
+        <header><div><p className="cv-label">05 / FORMAÇÃO ACADÊMICA</p><h2>Educação</h2></div><GraduationCap/></header>
+        <article><span>GRADUAÇÃO</span><div><h3>Engenharia de Computação</h3><p>Formação superior concluída</p></div><strong>CONCLUÍDO</strong></article>
+      </section>
+
+      <section className="cv-learning">
+        <header><div><p className="cv-label">06 / FORMAÇÃO CONTÍNUA</p><h2>Cursos e especializações</h2></div><span>Aprendizado aplicado aos projetos e à rotina profissional.</span></header>
+        <div className="cv-course-grid">{courses.map(([name, school, status, link], index)=><button type="button" onClick={() => setSelectedCourse({ name, school, status, link })} key={name}><span>{String(index+1).padStart(2,'0')}</span><small>{school}</small><h3>{name}</h3><p>{status} <Eye size={13}/></p></button>)}</div>
+      </section>
+
+      <section className="cv-data-learning">
+        <header><div><p className="cv-label">07 / EM ANDAMENTO</p><h2>Engenharia de Dados</h2></div><div className="cv-data-intro"><span>Trilha atual de estudos, experimentos e construção de projetos.</span><Link href="/data-engineering"><a>Explorar portfólio de dados <ArrowUpRight size={15}/></a></Link></div></header>
+        <div>{dataStudies.map(([name, focus, source], index)=><article key={name}><span>0{index+1}</span><div><h3>{name}</h3><p>{focus}</p></div><small>{source}</small><i>ESTUDANDO</i></article>)}</div>
+      </section>
+
+    </main>
+    {selectedCourse && <div className="cv-certificate-backdrop" onClick={() => setSelectedCourse(null)}><div className="cv-certificate-modal" role="dialog" aria-modal="true" aria-label={`Certificado ${selectedCourse.name}`} onClick={(event) => event.stopPropagation()}><header><div><span>{selectedCourse.school} / {selectedCourse.status}</span><h2>{selectedCourse.name}</h2></div><button type="button" onClick={() => setSelectedCourse(null)} aria-label="Fechar certificado"><X size={18}/></button></header><div className="cv-certificate-view">{/\.(jpe?g|png|webp)(\?.*)?$/i.test(selectedCourse.link) ? <img src={selectedCourse.link} alt={`Certificado ${selectedCourse.name}`}/> : <div className="cv-certificate-fallback"><span><Award size={46}/></span><small>CERTIFICADO VERIFICÁVEL</small><h3>{selectedCourse.name}</h3><p>Emitido por {selectedCourse.school}. Por segurança, a plataforma do curso não permite exibir este documento dentro de outros sites.</p><a href={selectedCourse.link} target="_blank" rel="noreferrer">Visualizar na {selectedCourse.school} <ArrowUpRight size={16}/></a></div>}</div><footer><p>O certificado original será aberto diretamente no site da instituição.</p><a href={selectedCourse.link} target="_blank" rel="noreferrer">Abrir certificado original <ArrowUpRight size={15}/></a></footer></div></div>}
+    <footer className="cv-footer"><div className="cv-shell"><span>ANDERSON FERNANDES / CURRÍCULO</span><span>DESENVOLVIMENTO · SISTEMAS · TECNOLOGIA</span><span>© {new Date().getFullYear()}</span></div></footer>
+  </div>
 }

@@ -228,7 +228,7 @@ export default function Navbar({ page, onGoTo }: Props) {
               {/* Modal Footer */}
               <div className="mt-6 border-t border-deepest pt-3.5 flex items-center justify-between font-mono text-[9.5px] text-faint">
                 <span>Engenharia de Dados // Anderson</span>
-                <span>8 Estágios</span>
+                <span>{PAGES.length} Estágios</span>
               </div>
             </motion.div>
           </motion.div>

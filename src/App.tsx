@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Pagination from "./components/Pagination";
 import Hero from "./components/Hero";
 import Terminal from "./components/Terminal";
-import Journey from "./components/Journey";
 import StackMap from "./components/StackMap";
 import DataVision from "./components/DataVision";
 import Projects from "./components/Projects";
@@ -26,8 +25,6 @@ function PageContent({ id }: { id: string }) {
           <Terminal />
         </>
       );
-    case "jornada":
-      return <Journey />;
     case "stack":
       return <StackMap />;
     case "pipeline":
@@ -79,7 +76,7 @@ export default function App() {
 
   return (
     <PageNavContext.Provider value={goToId}>
-      <div className="relative min-h-screen bg-base font-body text-ink antialiased">
+      <div className="data-portfolio relative min-h-screen bg-base font-body text-ink antialiased">
         <AmbientCanvas />
         <Navbar page={page} onGoTo={goTo} />
 
