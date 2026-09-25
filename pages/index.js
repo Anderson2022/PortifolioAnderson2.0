@@ -15,7 +15,7 @@ const SectionTitle = ({ eyebrow, title, copy }) => <div className="home-heading"
 
 export default function Home() {
   return <div className="portfolio-home-v2">
-    <Head><title>Anderson Fernandes | Desenvolvedor de Software</title><meta name="description" content="Portfólio de Anderson Fernandes, desenvolvedor de software especializado em back-end, APIs, integrações e dados." /><link rel="icon" href="/fav.png" /></Head>
+    <Head><title>Anderson Fernandes | Desenvolvedor de Software</title><meta name="description" content="Portfólio de Anderson Fernandes, desenvolvedor de software especializado em back-end, APIs, integrações e dados." /><link rel="icon" href="/Imagemdo.png" /></Head>
     <main>
       <section id="home" className="home-hero">
         <div className="home-orb home-orb-one" /><div className="home-orb home-orb-two" />

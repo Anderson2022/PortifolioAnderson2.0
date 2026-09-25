@@ -7,7 +7,7 @@ export default function DataEngineeringPage() {
       <Head>
         <title>Anderson Fernandes | Engenharia de Dados</title>
         <meta name="description" content="Jornada, arquitetura, projetos e estudos de Anderson Fernandes em Engenharia de Dados." />
-        <link rel="icon" href="/fav.png" />
+        <link rel="icon" href="/Imagemdo.png" />
       </Head>
       <DataEngineeringPortfolio />
     </>

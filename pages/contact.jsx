@@ -12,7 +12,7 @@ export default function ContactPage(){return <div className="contact-page">
         <div className="contact-channels">
           <a href="mailto:andersonsfernandes@hotmail.com"><Mail/><div><span>E-MAIL</span><b>andersonsfernandes@hotmail.com</b></div><ArrowUpRight/></a>
           <a href="tel:+5565992803826"><Phone/><div><span>TELEFONE</span><b>(65) 99280-3826</b></div><ArrowUpRight/></a>
-          <a href="https://api.whatsapp.com/send?phone=+55+5565996321128&text=Olá%2C+Anderson+Silva" target="_blank" rel="noreferrer"><MessageCircle/><div><span>WHATSAPP</span><b>Iniciar conversa</b></div><ArrowUpRight/></a>
+          <a href="https://api.whatsapp.com/send?phone=+55+5565992803826&text=Olá%2C+Anderson+Silva" target="_blank" rel="noreferrer"><MessageCircle/><div><span>WHATSAPP</span><b>Iniciar conversa</b></div><ArrowUpRight/></a>
           <a href="https://www.linkedin.com/in/anderson-silva-346255160/" target="_blank" rel="noreferrer"><FaLinkedinIn/><div><span>LINKEDIN</span><b>Conectar profissionalmente</b></div><ArrowUpRight/></a>
         </div>
         <div className="contact-meta"><p><MapPin/> Cuiabá, Mato Grosso</p><p><Clock/> Horário comercial · GMT-4</p></div>

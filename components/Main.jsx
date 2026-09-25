@@ -64,7 +64,7 @@ const Main = () => {
               </div>
             </Link>
             <a
-          href='https://api.whatsapp.com/send?phone=+55+5565996321128&text=Ol%C3%A1%2C+Anderson+Silva'
+          href='https://api.whatsapp.com/send?phone=+55+5565992803826&text=Ol%C3%A1%2C+Anderson+Silva'
               target='_blank'
               rel='noreferrer'
             >
