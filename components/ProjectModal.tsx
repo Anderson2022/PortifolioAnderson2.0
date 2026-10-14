@@ -89,7 +89,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               Destaques & Arquitetura
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {project.features.map((feat, idx) => (
+              {project.features?.map((feat, idx) => (
                 <div 
                   key={idx} 
                   className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3 transition-colors"
@@ -110,7 +110,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               Tecnologias Utilizadas
             </h3>
             <div className="flex flex-wrap items-center gap-2">
-              {project.tech.map((t, idx) => (
+              {project.tech?.map((t, idx) => (
                 <span
                   key={idx}
                   className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-sm shadow-sm hover:border-cyan-300 transition-colors flex items-center gap-2"

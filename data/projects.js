@@ -1,5 +1,26 @@
 export const PROJECTS_DATA = [
   {
+    id: 'freela-cuiaba',
+    title: 'Freela Cuiabá',
+    subtitle: 'Marketplace Local de Freelancers e Serviços',
+    description: 'Plataforma que conecta empresas, clientes e profissionais de Cuiabá e região para transformar serviços em oportunidades reais.',
+    longDescription: 'O Freela Cuiabá é um marketplace regional criado para aproximar talentos locais de quem precisa contratar. A plataforma reúne perfis profissionais, oportunidades, candidaturas, avaliações e comunicação direta em uma experiência responsiva e orientada à comunidade de Mato Grosso.',
+    category: 'react',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    mainTechIcon: 'Next.js',
+    image: '/assets/projects/freela-cuiaba.jpg',
+    status: 'active',
+    url: 'https://freelacuiaba.com/',
+    features: [
+      'Busca de profissionais por categoria, cidade e modalidade',
+      'Publicação de oportunidades e envio de candidaturas',
+      'Perfis profissionais com portfólio, serviços e certificações',
+      'Chat, acompanhamento de entregas e sistema de avaliações'
+    ],
+    featured: true,
+    color: '#df6d1f'
+  },
+  {
     id: 'meu-gestor-frontend',
     title: 'Meu Gestor — Front-end',
     subtitle: 'Painel de Gestão Web',
@@ -18,7 +39,7 @@ export const PROJECTS_DATA = [
       'Fluxos rápidos para as tarefas do dia a dia',
       'Integração com a API do Meu Gestor'
     ],
-    featured: true,
+    featured: false,
     color: '#5651e5'
   },
   {
@@ -64,46 +85,6 @@ export const PROJECTS_DATA = [
     color: '#3b82f6' // Blue
   },
   {
-    id: 'loteria-anderson',
-    title: 'Loteria Analytics',
-    subtitle: 'Anderson Portfólio & Estatísticas',
-    description: 'Sistema inteligente para gerenciamento e análises de combinações lotéricas, com foco em facilidade de uso, painéis intuitivos e cálculos estatísticos.',
-    longDescription: 'Uma aplicação web focada na análise de probabilidade e registro de jogos lotéricos. Transforma números complexos e histórico de sorteios em gráficos compreensíveis e sugestões inteligentes baseadas em frequência histórica.',
-    category: 'vue',
-    tech: ['Vue.js', 'Netlify', 'Chart.js', 'Estatística Algorítmica'],
-    mainTechIcon: 'Vue.js',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
-    status: 'development',
-    url: 'https://andersonportifolio.netlify.app',
-    features: [
-      'Dashboard analítico com histórico de sorteios',
-      'Gerador inteligente de dezenas com filtros de paridade',
-      'Interface limpa de fácil usabilidade para apostadores',
-      'Painel de simulação de acertos em tempo real'
-    ],
-    color: '#8b5cf6' // Purple
-  },
-  {
-    id: 'loteria-jade',
-    title: 'Loteria Premium',
-    subtitle: 'Jade Pithivier Dashboard',
-    description: 'Aplicação avançada com painel administrativo para geração de palpites, rastreamento de resultados e estatísticas visuais dinâmicas.',
-    longDescription: 'Versão avançada e customizada para gestão de palpites e acompanhamento de resultados lotéricos. Apresenta uma arquitetura robusta em Vue.js com visual moderno, tabelas dinâmicas de conferência e exportação de relatórios.',
-    category: 'vue',
-    tech: ['Vue.js', 'Netlify', 'CSS Modules', 'Web UI'],
-    mainTechIcon: 'Vue.js',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
-    status: 'development',
-    url: 'https://jade-pithivier-081acd.netlify.app',
-    features: [
-      'Gestão de bolões e divisão de cotas automatizada',
-      'Conferência automática de bilhetes cadastrados',
-      'Notificações instantâneas de novos resultados',
-      'Design em cartões interativos para fácil visualização'
-    ],
-    color: '#ec4899' // Pink
-  },
-  {
     id: 'rio-piscinas',
     title: 'Rio Piscinas Cacoal',
     subtitle: 'Catálogo Institucional & Vendas',
@@ -146,27 +127,6 @@ export const PROJECTS_DATA = [
     color: '#6366f1' // Indigo
   },
   {
-    id: 'task-master',
-    title: 'TaskMaster Pro',
-    subtitle: 'Kanban Corporativo Ultra-rápido',
-    description: 'Aplicativo corporativo de alta performance para quadros estilo Kanban com arrastar e soltar suave e sincronização em tempo real.',
-    longDescription: 'Criado para times de alta produtividade, o TaskMaster Pro oferece fluxos de trabalho flexíveis com animações suaves de arrastar e soltar (drag and drop). Feito inteiramente com TypeScript rigoroso e boas práticas de arquitetura de software.',
-    category: 'typescript',
-    tech: ['TypeScript', 'React', 'Zustand', 'HTML5 DragDrop'],
-    mainTechIcon: 'TypeScript',
-    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=1200&auto=format&fit=crop',
-    status: 'active',
-    url: 'https://github.com',
-    githubUrl: 'https://github.com',
-    features: [
-      'Arrastar e soltar 60fps sem engates',
-      'Campos customizados e etiquetas coloridas interativas',
-      'Filtros complexos de busca por responsável e prazo',
-      'Suporte offline completo com sincronização em segundo plano'
-    ],
-    color: '#f59e0b' // Amber
-  },
-  {
     id: 'crypto-pulse',
     title: 'CryptoPulse',
     subtitle: 'Rastreador de Mercados WebSockets',
@@ -190,15 +150,14 @@ export const PROJECTS_DATA = [
 ];
 
 export const TECH_CATEGORIES = [
-  { id: 'all', label: 'Todos os Projetos', count: 9 },
-  { id: 'vue', label: 'Vue.js', count: 5 },
-  { id: 'react', label: 'React', count: 2 },
-  { id: 'typescript', label: 'TypeScript', count: 1 },
+  { id: 'all', label: 'Todos os Projetos', count: 7 },
+  { id: 'vue', label: 'Vue.js', count: 3 },
+  { id: 'react', label: 'React', count: 3 },
   { id: 'node', label: 'Node.js / Fullstack', count: 1 },
 ];
 
 export const STATS_DATA = [
-  { label: 'Projetos Totais', value: '9', icon: 'FolderGit2', color: 'from-blue-500 to-cyan-400' },
+  { label: 'Projetos Totais', value: '7', icon: 'FolderGit2', color: 'from-blue-500 to-cyan-400' },
   { label: 'Tecnologias Foco', value: 'Vue & React', icon: 'Code2', color: 'from-emerald-400 to-teal-500' },
   { label: 'Em Produção', value: '5 Ativos', icon: 'Globe2', color: 'from-purple-500 to-indigo-500' },
   { label: 'Aceleração 3D', value: '100%', icon: 'Box', color: 'from-pink-500 to-rose-500' },

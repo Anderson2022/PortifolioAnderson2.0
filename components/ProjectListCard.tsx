@@ -64,7 +64,7 @@ const ProjectListCard: React.FC<ProjectListCardProps> = ({ project, onSelect }) 
         
         {/* Tech Badges */}
         <div className="flex flex-wrap lg:justify-end gap-1.5 max-w-xs">
-          {project.tech.map((t, idx) => (
+          {project.tech?.map((t, idx) => (
             <span
               key={idx}
               className="px-2 py-1 rounded text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200"

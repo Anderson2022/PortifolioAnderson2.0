@@ -7,7 +7,7 @@ import ProjectModal from '../components/ProjectModal'
 
 const filters = [
   ['all', 'Todos'], ['vue', 'Vue.js'], ['react', 'React'],
-  ['typescript', 'TypeScript'], ['node', 'Node.js'],
+  ['node', 'Node.js'],
 ]
 
 export default function ProjectsPage() {
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
   const projects = useMemo(() => PROJECTS_DATA.filter((project) => {
     const matchesFilter = filter === 'all' || project.category === filter
     const term = query.trim().toLowerCase()
-    const matchesSearch = !term || project.title.toLowerCase().includes(term) || project.description.toLowerCase().includes(term) || project.tech.some((tech) => tech.toLowerCase().includes(term))
+    const matchesSearch = !term || project.title.toLowerCase().includes(term) || project.description.toLowerCase().includes(term) || project.tech?.some((tech) => tech.toLowerCase().includes(term))
     return matchesFilter && matchesSearch
   }), [filter, query])
 
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
         {projects.length ? <div className="frontend-project-grid">
           <AnimatePresence mode="popLayout">{projects.map((project, index) => <motion.article layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ delay: index * .035 }} className={index % 5 === 0 ? 'frontend-project-wide' : ''} key={project.id} onClick={() => setSelectedProject(project)}>
             <div className="frontend-project-shot"><img src={project.image} alt={project.title}/><div className="frontend-project-overlay"/><span>{project.status === 'active' ? 'ONLINE' : 'EM DESENVOLVIMENTO'}</span><button aria-label={`Abrir ${project.title}`}><ArrowUpRight/></button></div>
-            <div className="frontend-project-info"><div><small>0{index + 1} / {project.category}</small><h3>{project.title}</h3><p>{project.subtitle}</p></div><div className="frontend-project-tags">{project.tech.slice(0, 3).map((tech) => <span key={tech}>{tech}</span>)}</div></div>
+            <div className="frontend-project-info"><div><small>0{index + 1} / {project.category}</small><h3>{project.title}</h3><p>{project.subtitle}</p></div><div className="frontend-project-tags">{project.tech?.slice(0, 3).map((tech) => <span key={tech}>{tech}</span>)}</div></div>
           </motion.article>)}</AnimatePresence>
         </div> : <div className="frontend-empty"><LayoutGrid/><h3>Nenhum projeto encontrado</h3><p>Tente outra tecnologia ou termo de busca.</p><button onClick={() => { setFilter('all'); setQuery('') }}>Limpar filtros</button></div>}
       </div>
