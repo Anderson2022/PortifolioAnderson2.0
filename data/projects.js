@@ -21,6 +21,12 @@ export const PROJECTS_DATA = [
     color: '#df6d1f'
   },
   {
+    id: 'poolcontrol',
+    title: 'PoolControl',
+    status: 'development',
+    url: 'https://poolcontrol-proxy.vercel.app'
+  },
+  {
     id: 'meu-gestor-frontend',
     title: 'Meu Gestor — Front-end',
     subtitle: 'Painel de Gestão Web',

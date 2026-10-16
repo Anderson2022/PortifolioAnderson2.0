@@ -18,7 +18,7 @@ export default function ProjectsPage() {
   const projects = useMemo(() => PROJECTS_DATA.filter((project) => {
     const matchesFilter = filter === 'all' || project.category === filter
     const term = query.trim().toLowerCase()
-    const matchesSearch = !term || project.title.toLowerCase().includes(term) || project.description.toLowerCase().includes(term) || project.tech?.some((tech) => tech.toLowerCase().includes(term))
+    const matchesSearch = !term || project.title.toLowerCase().includes(term) || project.description?.toLowerCase().includes(term) || project.tech?.some((tech) => tech.toLowerCase().includes(term))
     return matchesFilter && matchesSearch
   }), [filter, query])
 
@@ -41,7 +41,9 @@ export default function ProjectsPage() {
         </div>
 
         {projects.length ? <div className="frontend-project-grid">
-          <AnimatePresence mode="popLayout">{projects.map((project, index) => <motion.article layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ delay: index * .035 }} className={index % 5 === 0 ? 'frontend-project-wide' : ''} key={project.id} onClick={() => setSelectedProject(project)}>
+          <AnimatePresence mode="popLayout">{projects.map((project, index) => project.id === 'poolcontrol' ? <motion.a layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ delay: index * .035 }} className="frontend-poolcontrol-link" key={project.id} href={project.url} target="_blank" rel="noreferrer">
+            <span>EM DESENVOLVIMENTO</span><h3>{project.title}<ArrowUpRight size={18}/></h3>
+          </motion.a> : <motion.article layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ delay: index * .035 }} className={index % 5 === 0 ? 'frontend-project-wide' : ''} key={project.id} onClick={() => setSelectedProject(project)}>
             <div className="frontend-project-shot"><img src={project.image} alt={project.title}/><div className="frontend-project-overlay"/><span>{project.status === 'active' ? 'ONLINE' : 'EM DESENVOLVIMENTO'}</span><button aria-label={`Abrir ${project.title}`}><ArrowUpRight/></button></div>
             <div className="frontend-project-info"><div><small>0{index + 1} / {project.category}</small><h3>{project.title}</h3><p>{project.subtitle}</p></div><div className="frontend-project-tags">{project.tech?.slice(0, 3).map((tech) => <span key={tech}>{tech}</span>)}</div></div>
           </motion.article>)}</AnimatePresence>
